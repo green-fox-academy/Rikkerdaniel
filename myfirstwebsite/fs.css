@@ -1,0 +1,48 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 9%;
+    background-color: #333
+}
+li {
+    
+    float: right;
+}
+
+li a {
+    display: block;
+    color: #ff0099;;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    
+    background-image: url("./bg3.png") ; 
+}
+h3{
+    color:#ff0099;
+}
+div.dik{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+h1.mukodj{
+   
+    font-family: 'Times New Roman', Times, serif;
+}
+p{
+    font-family: consolas, courier;
+}
+h4{
+    font-family: Merriweather, serif;
+}
+
+
+
+
