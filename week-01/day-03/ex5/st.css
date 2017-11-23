@@ -1,0 +1,20 @@
+h1{
+    color:#FF6347;
+}
+h3{
+    color:#8A2BE2;
+}
+il:nth-child(1) ,il:nth-child(2) , il:nth-child(3) {
+    list-style-type: square;
+}
+li:nth-child(1) ,li:nth-child(2) , li:nth-child(3) {
+    list-style-type: lower-roman;
+    color:#FF30FF;
+    }
+    li:nth-child(4){
+        list-style-type: lower-roman;
+    }
+    li[id]:nth-child(3) {
+        color:#FF30FF;
+
+    }
