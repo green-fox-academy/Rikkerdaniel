@@ -1,0 +1,47 @@
+div {
+    width: 350px;
+    height: 520px;
+    
+    border: 15px solid #4285F4;
+   
+
+    
+    
+}
+#child{
+    height: 130px;
+    width: 350px;
+    
+    
+    background-color: #E67676;
+    border: none;
+}
+#child1{
+    height: 130px;
+    width: 350px;
+    
+    background-color: #F2F062 ;
+    border: none;
+}
+#child2{
+    height: 130px;
+    width: 350px;
+    
+    background-color:#A9E6E6 ;
+    border: none;
+}
+#child3{
+    height: 130px;
+    width: 350px;
+    
+    background-color: #7692E4;
+    border: none;
+}
+span{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color:white;
+    font-size: 28px;
+}
