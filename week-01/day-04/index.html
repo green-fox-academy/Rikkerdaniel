@@ -13,27 +13,53 @@
            
         <div id="container">
             <div id="header">
-
-        </div>
-        <div id="first">
-            <div id="fourth">
-                <input type="number" name="age" size="4" max="4" > <br>
+                 <h1>Profil</h1>
             </div>
-            <div id="fifth"></div>
+        <div id="first">
+            <h2>Személyes adatok</h2>
+            <h4>Név</h4>
+            <input id="name" type="text" name="name" ><br>
+            <div id="fourth">
+                <h4 id="left"> születési év</h4>
+                <input id="anyad" type="number" width="4"> <br>
+            </div>
+            <div id="fifth">
+                <h4 id="left">Nemed</h4>
+                <input type="radio" name="gender" value="male"> féfi
+                <input type="radio" name="gender" value="female"> nő
+            </div>
             <div id="sixth">
-                <input type="checkbox" name="brands" value="brand"> brand1
+                <h4 id="left">MIlyen márkát szeretsz?</h4>
+                <input type="checkbox" name="brands" value="brand"> brand1  
                 <input type="checkbox" name="brands" value="brand"> brand2<br>
-                <input type="checkbox" name="brands" value="brand"> brand3
+                <input type="checkbox" name="brands" value="brand"> brand3  
                 <input type="checkbox" name="brands" value="brand"> brand4<br>
-                <input type="checkbox" name="brands" value="brand"> brand5
+                <input type="checkbox" name="brands" value="brand"> brand5  
                 <input type="checkbox" name="brands" value="brand"> brand6<br>
-                <input type="checkbox" name="brands" value="brand"> brand7
+                <input type="checkbox" name="brands" value="brand"> brand7  
                 <input type="checkbox" name="brands" value="brand"> brand8<br>
-                <input type="checkbox" name="brands" value="brand"> brand9
+                <input type="checkbox" name="brands" value="brand"> brand9  
                 <input type="checkbox" name="brands" value="brand"> brand10<br>
             </div>
         </div>
-        <div id="second"></div>
+        <div id="second">
+                <h2>Kapcsolat</h2>
+                <h4>Telefonszám</h4>
+                <input type="tel" name="phone"  required><br>
+                <h4>E-mail cím</h4>
+                <input type="email" name="email" required><br>
+                <h4>Facebook profil</h4>
+                <input type="text" name="face" ><br>
+                <h4>Twitter profil</h4>
+                <input type="text" name="twitter" ><br>
+                <h4>Milyen házban laksz</h4>
+                <select id="select"name="select" > 
+                    <option value="value1">Kertesház</option> 
+                    <option value="value2" selected>lakás</option>
+                    <option value="value3">Palota a  rózsadombon</option>
+                </select>
+
+        </div>
         <div id="third">
                 <div class="button">
                     <button type="submit">Send </button>

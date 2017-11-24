@@ -1,15 +1,23 @@
 
 #header {
     width: 660px;
-    border:10px solid  red;
-    background-color:yellow;
+    
+    background-color:#DCD6CD;
     height: 30px;
+    padding:10px;
+}
+h2{
+    background-color: #938C97;
+}
+h1{
+    margin:0px;
+    padding:0px
 }
 #container {
     margin: auto;
     position: center;
     width: 680px;
-    background-color: #ffcc33;
+    background-color:#DCD6CD;
     height: 1234px;
    
     
@@ -18,9 +26,9 @@
     margin-top:10px;
     width: 320px;
     float: left;
-    height: 430px;
-    background-color: blue;
-    border: 10px solid red;
+    height: 400px;
+    background-color: #DCD6CD;
+    padding:10px;
     
    
         
@@ -29,9 +37,10 @@
     margin-top:10px;
     width: 320px;
     float: left;
-    height: 430px;
-    background-color: green;
-    border: 10px solid red;
+    height: 400px;
+    background-color:#DCD6CD ;
+    padding:10px;
+    
     
 }
 #third{
@@ -40,25 +49,25 @@
     width: 660px;
     float: left;
     height: 430px;
-    background-color: green;
+    background-color: #DCD6CD;
     border: 10px solid red;
 
 }
 #fourth{
-    margin-top:50%;
+    margin-top:10%;
     width: 156px;
     float: left;
     height: 10%;
     
-    border: 2px solid black;
+    
 }
 #fifth{
-    margin-top:50%;
+    margin-top:10%;
     width: 156px;
     float: left;
     height: 10%;
     
-    border: 2px solid black;
+    
 
 }
 #sixth{
@@ -67,7 +76,26 @@
     float: left;
     height: 30%;
     
-    border: 2px solid black;
+   
 
 }
+h4{
+    padding-top:12px;
+   
+    
+    margin:0px;
 
+}
+#anyad{
+    padding-left:10px;
+    width: 4em;
+}
+#left{
+    padding:0px;
+}
+#select{
+    width: 13em;
+}
+#name{
+    width:20em;
+}
