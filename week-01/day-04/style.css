@@ -10,6 +10,7 @@ h2{
     background-color: #938C97;
 }
 h1{
+    
     margin:0px;
     padding:0px
 }
@@ -50,7 +51,8 @@ h1{
     float: left;
     height: 430px;
     background-color: #DCD6CD;
-    border: 10px solid red;
+    
+    padding:10px;
 
 }
 #fourth{
