@@ -1,0 +1,46 @@
+
+#header {
+    width: 660px;
+    border:10px solid  red;
+    background-color:yellow;
+    height: 30px;
+}
+#container {
+    margin: auto;
+    position: center;
+    width: 680px;
+    background-color: #ffcc33;
+    height: 1234px;
+   
+    
+}
+#first {
+    margin-top:10px;
+    width: 320px;
+    float: left;
+    height: 300px;
+    background-color: blue;
+    border: 10px solid red;
+    
+   
+        
+}
+#second {
+    margin-top:10px;
+    width: 320px;
+    float: left;
+    height: 300px;
+    background-color: green;
+    border: 10px solid red;
+    
+}
+#third{
+    
+    margin-top:10px;
+    width: 660px;
+    float: left;
+    height: 300px;
+    background-color: green;
+    border: 10px solid red;
+
+}
