@@ -14,12 +14,19 @@ h1{
     margin:0px;
     padding:0px
 }
+body{
+    margin:0px;
+    background-color: #DCD6CD;
+    
+    border:10px solid white;
+}
 #container {
     margin: auto;
     position: center;
     width: 680px;
     background-color:#DCD6CD;
     height: 1234px;
+    border-bottom-left-radius: 50px;
    
     
 }
@@ -99,5 +106,5 @@ h4{
     width: 13em;
 }
 #name{
-    width:20em;
+    width:24em;
 }
