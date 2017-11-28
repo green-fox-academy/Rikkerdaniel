@@ -10,8 +10,6 @@ namespace Factorial
             int num = Convert.ToInt32(Console.ReadLine());
             factorio(num);
             Console.ReadKey();
-            // - Create a function called `factorio`
-            //   that returns it's input's factorial
         }
         static void factorio(int number)
         {
