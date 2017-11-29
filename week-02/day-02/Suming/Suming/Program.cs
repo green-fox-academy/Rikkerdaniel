@@ -6,7 +6,6 @@ namespace Suming
     {
         static void Main(string[] args)
         {
-            
             Console.WriteLine("Give me a NUmber ");
             int number = Convert.ToInt32(Console.ReadLine());
             Sum(number);
