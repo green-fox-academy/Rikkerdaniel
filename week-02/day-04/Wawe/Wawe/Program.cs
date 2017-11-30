@@ -8,8 +8,9 @@ namespace Wawe
         
         static void Main(string[] args)
         {
+            int a = 2;
             
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < a; i++)
             {
                  
 
@@ -39,6 +40,7 @@ namespace Wawe
                 Console.WriteLine("     HELLO");
                 Thread.Sleep(600);
                 Console.Clear();
+                a++;
             }
         }
     }
