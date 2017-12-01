@@ -4,27 +4,44 @@ namespace ArmstrongNumber
 {
     class Program
     {
-        static void Main(string[] args)
+        public static string Isarmstrong = ("");
+        static bool Judge()
         {
             Console.WriteLine("Give me that number");
-            string  isarmstrong = Console.ReadLine();
-            char[] digitarray= isarmstrong.ToCharArray();
-            double  a = 0;
-            for (int i = 0; i < isarmstrong.Length ; i++)
+            Isarmstrong = Console.ReadLine();
+            char[] digitarray = Isarmstrong.ToCharArray();
+            double a = 0;
+            for (int i = 0; i < Isarmstrong.Length; i++)
             {
                 string s = Convert.ToString(digitarray[i]);
-                double b = Convert.ToDouble(s );
-                a = a +( Math.Pow(b, isarmstrong.Length));
+                double b = Convert.ToDouble(s);
+                a = a + (Math.Pow(b, Isarmstrong.Length));
             }
-            if (a==Convert.ToDouble (isarmstrong ))
+            if (a == Convert.ToDouble(Isarmstrong))
             {
-                Console.WriteLine("The "+ isarmstrong + " is an armstrong number :)");
+                return true;
             }
             else
             {
-                Console.WriteLine("Sorry"+isarmstrong +" is not an armstrong number");
+                return false;
+            }
+        }
+        static void Output()
+        {
+            if (Judge())
+            {
+                Console.WriteLine("The " + Isarmstrong + " is an armstrong number :)");
+            }
+            else
+            {
+                Console.WriteLine("Sorry" + Isarmstrong + " is not an armstrong number");
             }
             Console.ReadKey();
+        }
+        static void Main(string[] args)
+        {
+            Output();
+
 
         }
     }
