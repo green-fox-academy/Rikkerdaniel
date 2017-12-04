@@ -4,24 +4,26 @@ namespace Josephus
 {
     class Program
     {
-        static int Josephus(int n)
-        {
-            int step = 2;
-            if (n <= 2)
-            {
-                return 1;
-            }
-            int a= ((n - 1) + (step - 1) % (n + 1));
-            return a;
-        }
-
         static void Main(string[] args)
         {
-            Console.WriteLine("Dont want to die in a suicide circel ? Give me the number of people and i save your ass!");
+            Console.WriteLine("Give me the number of soldiers");
+            byte[] binary = BitConverter.GetBytes(Convert.ToInt32(Console.ReadLine()));
+
+            for (int i = 0; i < binary .Length ; i++)
+            {
+                if (binary [i]==1)
+                {
+                    binary[i] = 0;
+                    binary[binary.Length] = 1;
+                    break;
+                }
+
+            }
 
 
-            Console.WriteLine(Josephus(Convert.ToInt32(Console.ReadLine())));
-            Console.ReadKey();
+            Console.WriteLine(Convert.ToInt32 (binary));
+            Console.ReadLine();
         }
     }
 }
+
