@@ -12,25 +12,25 @@ namespace decrypt
         static void Main(string[] args)
         {
 
-            var sr = new StreamReader(@"C:\Users\rikda\Desktop\asbest\greenfox\Rikkerdaniel\week-03\day-01\decrypt\decrypt\dec.txt",true );
-            string str = "";
-            string line1 = sr .ReadToEnd(); 
+            var sr = new StreamReader(@"C:\Users\rikda\Desktop\asbest\greenfox\Rikkerdaniel\week-03\day-01\decrypt\decrypt\dec.txt", true);
+            string str = "        ";
+            string line1 = sr.ReadToEnd();
 
             char[] chars = line1.ToCharArray();
 
-            for (int i = 0; i <chars.Length ; i++)
+            for (int i = 0; i < chars.Length; i++)
             {
                 int b = Convert.ToInt32(chars[i]);
-                b =b-1;
+                b = b - 1;
                 if (b == 31)
                 {
                     str += " ";
                 }
-                else if (b==12)
+                else if (b == 12)
                 {
                     str += "\n";
                 }
-                else  
+                else
                 {
                     char c = Convert.ToChar(b);
 
@@ -39,13 +39,13 @@ namespace decrypt
                 }
 
             }
-            
+
 
             sr.Close();
 
 
-           
-            Console.WriteLine(str );
+
+            Console.WriteLine(str);
             Console.ReadKey();
         }
     }
