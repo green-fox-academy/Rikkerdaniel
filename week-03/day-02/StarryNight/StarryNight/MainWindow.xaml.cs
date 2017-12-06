@@ -26,20 +26,16 @@ namespace StarryNight
             foxDraw.BackgroundColor(Colors.Black);
             for (int i = 0; i < 15; i++)
             {
-                DrawStars(foxDraw); 
+                DrawStars(foxDraw);
             }
-            // draw the night sky:
-            // - The background should be black
-            // - The stars can be small squares
-            // - The stars should have random positions on the canvas
-            // - The stars should have random color (some shade of grey)
+
         }
         public static void DrawStars(FoxDraw foxDraw)
         {
             int x = rnd.Next(0, 340);
             int y = rnd.Next(0, 515);
             byte gray = Convert.ToByte(rnd.Next(0, 255));
-            foxDraw.StrokeColor(Color.FromRgb(gray,gray,gray ));
+            foxDraw.StrokeColor(Color.FromRgb(gray, gray, gray));
             foxDraw.FillColor(Color.FromRgb(gray, gray, gray));
             foxDraw.DrawRectangle(y, x, 6, 6);
         }
