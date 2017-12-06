@@ -25,7 +25,14 @@ namespace CenterSquare
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
+            foxDraw.BackgroundColor(Colors.Beige);
+            DrawRectangle(foxDraw);
             // draw a green 10x10 square to the canvas' center.
+        }
+        public static void DrawRectangle(FoxDraw foxDraw)
+        {
+            foxDraw.StrokeColor(Colors.Blue  );
+            foxDraw.DrawRectangle(145,145, 10, 10);
         }
     }
 }
