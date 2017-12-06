@@ -37,6 +37,7 @@ namespace tryangle
             {
                 foxDraw.DrawLine(10+(i*10), 340-(i*18), 10+(i*20),350);
                 foxDraw.DrawLine(350 - (i * 10), 340- (i * 18), 350- (i * 20), 350);
+                foxDraw.DrawLine(350 - (i * 10), 340 - (i * 18), 10 + (i * 10), 340 - (i * 18));
             }
 
 
