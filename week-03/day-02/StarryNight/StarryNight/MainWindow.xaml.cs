@@ -38,8 +38,9 @@ namespace StarryNight
         {
             int x = rnd.Next(0, 340);
             int y = rnd.Next(0, 515);
-            int gray = rnd.Next(0, 255);
-            //foxDraw.StrokeColor(Color.FromRGB(gray,gray,gray ));
+            byte gray = Convert.ToByte(rnd.Next(0, 255));
+            foxDraw.StrokeColor(Color.FromRgb(gray,gray,gray ));
+            foxDraw.FillColor(Color.FromRgb(gray, gray, gray));
             foxDraw.DrawRectangle(y, x, 6, 6);
         }
     }
