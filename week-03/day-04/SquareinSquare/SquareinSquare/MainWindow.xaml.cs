@@ -23,22 +23,22 @@ namespace SquareinSquare
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             foxDraw.BackgroundColor(Colors.Yellow);
-            int startx = 0;
-            int starty = 110;
-            int endx = 330;
-            int endy = 110;
+           
+            int starty = 330;
+            int y = 0;
+           
 
-            DrawGreenLines(foxDraw, startx, starty, endx, endy);
+            DrawGreenLines(foxDraw, starty,y );
 
         }
-        public static void DrawGreenLines(FoxDraw foxDraw, int x, int y, int x1, int y1)
+        public static void DrawGreenLines(FoxDraw foxDraw, int x,int y)
         {
-            if (y > 10)
+            if ( x>1)
             {
-                foxDraw.DrawLine(x, y, x1, y1);
-                foxDraw.DrawLine(x, y * 2, x1, y1 * 2);
+                foxDraw.DrawRectangle((x/3)+y , 0, x/3,x/3);
+                foxDraw.DrawRectangle(((x/3)*2)+y, x/3 , x/3, x/3);
 
-                DrawGreenLines(foxDraw, x + (x1 / 3), y / 3, (x1 / 3) * 2, y1 / 3);
+                DrawGreenLines(foxDraw, x/3,x/3);
             }
         }
     }
