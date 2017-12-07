@@ -10,8 +10,23 @@ namespace String
     {
         static void Main(string[] args)
         {
-            // Given a string, compute recursively (no loops) a new string where all the
-            // lowercase 'x' chars have been changed to 'y' chars.
+            string thing = Console.ReadLine();
+            Console.WriteLine(Replace(thing));
+            Console.ReadKey();
         }
+        static string Replace(string text)
+        {
+            if (text.Length == 0)
+            {
+                return "";
+            }
+            if (text[0] == 'x')
+            {
+                text = "y" + text.Substring(1);
+            }
+            
+              return text[0] + Replace(text.Substring(1));
+        }
+       
     }
 }
