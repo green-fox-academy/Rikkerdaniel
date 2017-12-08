@@ -51,7 +51,7 @@ namespace fractal
 
 
 
-                DrawGreenLines(foxDraw, a / 2, a / 4, 0, 300);
+                DrawGreenLines(foxDraw, a/2, a/2, 0, 300);
                 DrawGreenLines(foxDraw, a / 2, a / 4, 0, 300);
 
             }

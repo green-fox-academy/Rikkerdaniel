@@ -32,11 +32,8 @@ namespace decrypt
                 else
                 {
                     char decryptedChar = Convert.ToChar(UnicodeChar);
-
-
                     str += decryptedChar.ToString();
                 }
-
             }
             sr.Close();
             Console.WriteLine(str);
