@@ -9,10 +9,9 @@ namespace decrypt
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Decrypter(int key, string path)
         {
-
-            var sr = new StreamReader(@"C:\Users\rikda\Desktop\asbest\greenfox\Rikkerdaniel\week-03\day-01\decrypt\decrypt\dec.txt", true);
+            var sr = new StreamReader(path, true);
             string str = "        ";
             string line1 = sr.ReadToEnd();
 
@@ -20,32 +19,36 @@ namespace decrypt
 
             for (int i = 0; i < chars.Length; i++)
             {
-                int b = Convert.ToInt32(chars[i]);
-                b = b - 1;
-                if (b == 31)
+                int UnicodeChar = Convert.ToInt32(chars[i]);
+                UnicodeChar = UnicodeChar + key;
+                if (UnicodeChar == 31)
                 {
                     str += " ";
                 }
-                else if (b == 12)
+                else if (UnicodeChar == 12)
                 {
                     str += "\n";
                 }
                 else
                 {
-                    char c = Convert.ToChar(b);
+                    char decryptedChar = Convert.ToChar(UnicodeChar);
 
 
-                    str += c.ToString();
+                    str += decryptedChar.ToString();
                 }
 
             }
-
-
             sr.Close();
-
-
-
             Console.WriteLine(str);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Give me the path for your file!");
+            string path = Console.ReadLine();
+            //@"C:\Users\rikda\Desktop\asbest\greenfox\Rikkerdaniel\week-03\day-01\decrypt\decrypt\dec.txt"
+            Console.WriteLine("Give me the key ");
+            int key = int.Parse(Console.ReadLine());
+            Decrypter(key, path);
             Console.ReadKey();
         }
     }
