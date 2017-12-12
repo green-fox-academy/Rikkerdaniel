@@ -31,7 +31,7 @@ namespace GreenfoxOO
 
         public override void GetGoal()
         {
-            Console.WriteLine("Be a junior software developer.");
+            Console.WriteLine("My goal is : Be a junior software developer.");
         }
 
         public override void Introduce()
