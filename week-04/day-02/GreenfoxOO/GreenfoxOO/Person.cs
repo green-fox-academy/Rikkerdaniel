@@ -27,7 +27,7 @@ namespace GreenfoxOO
         public string  Gender { get; set; }
 
 
-        public void Introduce()
+        public virtual void Introduce()
         {
             Console.WriteLine("Hi, I'm "+Name+", a "+Age+" year old "+Gender);
         }

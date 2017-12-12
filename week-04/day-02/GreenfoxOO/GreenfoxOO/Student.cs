@@ -28,12 +28,13 @@ namespace GreenfoxOO
         
         public string previousOrganization { get; set; }
         public int skippedDays { get; set; }
+
         public override void GetGoal()
         {
             Console.WriteLine("Be a junior software developer.");
         }
 
-        public new void Introduce()
+        public override void Introduce()
         {
             Console.WriteLine("Hi, I'm " + Name + ", a " + Age + " year old" + Gender + " from " 
                 + previousOrganization + " who skipped "+skippedDays +"days from the course already.");
