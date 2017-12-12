@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace GardenOO
 {
-    class Tree
+    class Tree:Plant 
     {
+        public Tree(int Water, string Color)
+        {
+            waterStatus = Water ;
+            color = Color;
+            Name="tree";
+        }
     }
+   
 }
