@@ -15,10 +15,5 @@ namespace GardenOO
             Name = "flower";
 
         }
-        
-        public void Watered(int water)
-        {
-            waterStatus = waterStatus + water;
-        }
     }
 }
