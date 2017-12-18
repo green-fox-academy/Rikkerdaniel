@@ -21,6 +21,7 @@ namespace RPGGame
         private FoxDraw FoxDraw;
         private int CurrentX = 0;
         private int CurrentY = 0;
+        private int CurrentTile = 0;
 
         public MainWindow()
         {
@@ -39,50 +40,62 @@ namespace RPGGame
         }
         private void KeyDownEvent(object sender, KeyEventArgs e)
         {
+            var tilelist = new List<int> { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+                                           0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
+                                           0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
+                                           0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
+                                           1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
+                                           0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
+                                           0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
+                                           0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
+                                           0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
+                                           0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
+                                           0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
+
             if (e.Key == Key.Up)
             {
-                if (CurrentY  > 0)
+                if (CurrentY  > 0 && tilelist[CurrentTile - 10] == 0)
                 {
                     FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[2], 1000, 1000);
-
+                    CurrentTile += -10;
                     CurrentY += -50;
                     FoxDraw.SetPosition(FoxDraw.Tiles[3], CurrentX, CurrentY);
                 }
             }
             if (e.Key == Key.Down)
             {
-                if (CurrentY < 500)
+                if (CurrentY < 500&&tilelist [CurrentTile+10 ]==0)
                 {
                     FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[2], 1000, 1000);
-
+                    CurrentTile += 10;
                     CurrentY += 50;
                     FoxDraw.SetPosition(FoxDraw.Tiles[0], CurrentX, CurrentY);
                 }
             }
             if (e.Key == Key.Left)
             {
-                if (CurrentX > 0)
+                if (CurrentX > 0 && tilelist[CurrentTile - 1] == 0)
                 {
                     FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[2], 1000, 1000);
-
+                    CurrentTile += -1;
                     CurrentX += -50;
                     FoxDraw.SetPosition(FoxDraw.Tiles[1], CurrentX, CurrentY);
                 }
             }
             if (e.Key == Key.Right)
             {
-                if (CurrentX < 450)
+                if (CurrentX < 450 && tilelist[CurrentTile + 1] == 0)
                 {
                     FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
-
+                    CurrentTile += 1;
                     CurrentX += 50;
                     FoxDraw.SetPosition(FoxDraw.Tiles[2], CurrentX, CurrentY);
                 }
