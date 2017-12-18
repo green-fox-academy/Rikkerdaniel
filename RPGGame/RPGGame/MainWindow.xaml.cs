@@ -54,7 +54,7 @@ namespace RPGGame
 
             if (e.Key == Key.Up)
             {
-                if (CurrentY  > 0 && tilelist[CurrentTile - 10] == 0)
+                if (CurrentY > 0 && tilelist[CurrentTile - 10] == 0)
                 {
                     FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
@@ -66,7 +66,7 @@ namespace RPGGame
             }
             if (e.Key == Key.Down)
             {
-                if (CurrentY < 500&&tilelist [CurrentTile+10 ]==0)
+                if (CurrentY < 500 && tilelist[CurrentTile + 10] == 0)
                 {
                     FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);
                     FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
