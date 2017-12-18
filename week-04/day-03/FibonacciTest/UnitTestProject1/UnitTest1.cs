@@ -13,9 +13,12 @@ namespace UnitTestProject1
             //Arrange
             var prog = new Program();
             //Act
-            int output = prog.Fib(5);
+            int count = 5;
+            int output = prog.Fib(count );
+            
             //Assert
             Assert.AreEqual(5,output);
         }
+        
     }
 }
