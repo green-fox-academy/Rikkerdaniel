@@ -7,14 +7,14 @@ using System.Windows.Media.Imaging;
 
 namespace GreenFox
 {
-    public class FoxDraw
+    public class foxDraw
     {
         private const int TileSize = 50;
 
         public Canvas Canvas { get; set; }
         public List<Image> Tiles { get; set; }
 
-        public FoxDraw(Canvas canvas)
+        public foxDraw(Canvas canvas)
         {
             Canvas = canvas;
             Tiles = new List<Image>();
@@ -61,6 +61,7 @@ namespace GreenFox
             Canvas.Children.Clear();
 
         }
+        
     }
 }
  

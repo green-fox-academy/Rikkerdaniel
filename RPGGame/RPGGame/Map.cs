@@ -9,12 +9,11 @@ namespace RPGGame
 {
     class Map
     {
-
         public int MapWidth { get; private set; }
         public int MapHeigth { get; private set; }
-        public FoxDraw myfoxDraw { get; set; }
+        public foxDraw myfoxDraw { get; set; }
 
-        public Map(FoxDraw foxDraw)
+        public Map(foxDraw foxDraw)
         {
             MapWidth = 10;
             MapHeigth = 11;
@@ -34,6 +33,7 @@ namespace RPGGame
                                            0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
                                            0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
                                            0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
+
             int ycoordinate = 0;
             int listcounter = 0;
             for (int i = 0; i < MapHeigth; i++)
@@ -46,15 +46,11 @@ namespace RPGGame
                     {
                         myfoxDraw.AddImage("Assets/floor.png", xcoordinate, ycoordinate);
                         xcoordinate = xcoordinate + 50;
-                        
-                        
                     }
                     if (tilelist [listcounter]==1)
                     {
                         myfoxDraw.AddImage("Assets/wall.png", xcoordinate, ycoordinate);
                         xcoordinate = xcoordinate + 50;
-                       
-                       
                     }
                     listcounter++;
                 }
