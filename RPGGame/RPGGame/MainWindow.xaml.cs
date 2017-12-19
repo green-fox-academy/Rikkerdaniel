@@ -22,14 +22,18 @@ namespace RPGGame
         private Hero hero = new Hero();
         public int ClicCounter=0;
         private Skeletons Skeleton1 = new Skeletons();
+        private int Level = 0;
 
        
 
 
         public MainWindow()
         {
+            Level++;
+
             InitializeComponent();
             var foxDraw = new foxDraw(canvas);
+            
             var mymap = new Map(foxDraw);
             mymap.MapCreater();
             FoxDraw = new foxDraw(canvas);
@@ -71,6 +75,7 @@ namespace RPGGame
             if (ClicCounter%2==0)
             {
                 Skeleton1.SkeletonMove(FoxDraw);
+               
             }
             //if (hero current tile and monster current tile =)
             //{
