@@ -9,29 +9,23 @@ namespace RPGGame
 {
     class Hero : Caracter
     {
-        public Hero()
-        {
-            FoxDraw.AddImage("Assets/hero-down.png", 0, 0);
-            FoxDraw.AddImage("Assets/hero-left.png", 0, 0);
-            FoxDraw.AddImage("Assets/hero-right.png", 0, 0);
-            FoxDraw.AddImage("Assets/hero-up.png", 0, 0);
-        }
+       
         public int Level { get; set; }
         private foxDraw FoxDraw;
        private int CurrentX = 0;
         private int CurrentY = 0;
        private int CurrentTile = 0;
         public List<int> tilelist = new List<int> { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
-                                           0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
-                                           0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
-                                           0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
-                                           1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
-                                           0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
-                                           0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
-                                           0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
+                                                    0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
+                                                    0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
+                                                    0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
+                                                    1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
+                                                    0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
+                                                    0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
+                                                    0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
+                                                    0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
+                                                    0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
+                                             0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
 
 
         public void HeroUp(foxDraw FoxDraw)
