@@ -61,7 +61,11 @@ namespace GreenFox
             Canvas.Children.Clear();
 
         }
-        
+        public int Level()
+        {
+            int level =1;
+            return level;
+        }
     }
 }
  

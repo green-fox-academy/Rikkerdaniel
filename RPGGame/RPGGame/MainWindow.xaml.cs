@@ -20,18 +20,11 @@ namespace RPGGame
     {
         private foxDraw FoxDraw;
         private Hero hero = new Hero();
-        public List<int> tilelist = new List<int> { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
-                                           0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
-                                           0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
-                                           0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
-                                           1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
-                                           0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
-                                           0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
-                                           0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
-          
+        public int ClicCounter=0;
+        private Skeletons Skeleton1 = new Skeletons();
+
+       
+
 
         public MainWindow()
         {
@@ -49,6 +42,7 @@ namespace RPGGame
             FoxDraw.AddImage("Assets/skeleton.png", 0, 0);
             FoxDraw.AddImage("Assets/skeleton.png", 0, 0);
             FoxDraw.AddImage("Assets/boss.png", 0, 0);
+            FoxDraw.AddImage("Assets/pixil-layer-Background (1).png", 0, 0);
             var skeleton = new Skeletons();
             skeleton.SkeletonPlace(FoxDraw);
             var boss = new Boss();
@@ -72,6 +66,11 @@ namespace RPGGame
             if (e.Key == Key.Right)
             {
                 hero.HeroRght(FoxDraw);
+            }
+            ClicCounter++;
+            if (ClicCounter%2==0)
+            {
+                Skeleton1.SkeletonMove(FoxDraw);
             }
             //if (hero current tile and monster current tile =)
             //{

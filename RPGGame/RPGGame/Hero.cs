@@ -11,26 +11,15 @@ namespace RPGGame
     {
        
         public int Level { get; set; }
-        private foxDraw FoxDraw;
+       // private foxDraw FoxDraw;
        private int CurrentX = 0;
         private int CurrentY = 0;
        private int CurrentTile = 0;
-        public List<int> tilelist = new List<int> { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
-                                                    0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
-                                                    0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
-                                                    0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
-                                                    1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
-                                                    0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
-                                                    0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
-                                                    0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
-                                                    0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
-                                                    0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
-                                             0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
-
+        private TileList tileList = new TileList();
 
         public void HeroUp(foxDraw FoxDraw)
         {
-            if (CurrentY > 0 && tilelist[CurrentTile - 10] == 0)
+            if (CurrentY > 0 && tileList.Tilelist(CurrentTile - 10, FoxDraw.Level()) == 0)
             {
                 FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                 FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
@@ -42,7 +31,7 @@ namespace RPGGame
         }
         public void HeroDown(foxDraw FoxDraw)
         {
-            if (CurrentY < 500 && tilelist[CurrentTile + 10] == 0)
+            if (CurrentY < 500 && tileList.Tilelist(CurrentTile + 10, FoxDraw.Level()) == 0)
             {
                 FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);
                 FoxDraw.SetPosition(FoxDraw.Tiles[1], 1000, 1000);
@@ -54,7 +43,7 @@ namespace RPGGame
         }
         public void HeroLeft(foxDraw FoxDraw)
         {
-            if (CurrentX > 0 && tilelist[CurrentTile - 1] == 0)
+            if (CurrentX > 0 && tileList.Tilelist(CurrentTile - 1, FoxDraw.Level()) == 0)
             {
                 FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                 FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);
@@ -66,7 +55,7 @@ namespace RPGGame
         }
         public void HeroRght(foxDraw FoxDraw)
         {
-            if (CurrentX < 450 && tilelist[CurrentTile + 1] == 0)
+            if (CurrentX < 450 && tileList.Tilelist(CurrentTile + 1, FoxDraw.Level()) == 0)
             {
                 FoxDraw.SetPosition(FoxDraw.Tiles[0], 1000, 1000);
                 FoxDraw.SetPosition(FoxDraw.Tiles[3], 1000, 1000);

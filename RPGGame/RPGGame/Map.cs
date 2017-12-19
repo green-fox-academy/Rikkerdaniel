@@ -11,29 +11,18 @@ namespace RPGGame
     {
         public int MapWidth { get; private set; }
         public int MapHeigth { get; private set; }
-        public foxDraw myfoxDraw { get; set; }
+        public foxDraw FoxDraw { get; set; }
 
         public Map(foxDraw foxDraw)
         {
             MapWidth = 10;
             MapHeigth = 11;
-            myfoxDraw = foxDraw;
+            FoxDraw = foxDraw;
         }
 
+         private TileList tileList = new TileList();
         public void MapCreater()
         {
-            var tilelist = new List<int> { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
-                                           0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
-                                           0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
-                                           0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
-                                           1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
-                                           0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
-                                           0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
-                                           0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
-
             int ycoordinate = 0;
             int listcounter = 0;
             for (int i = 0; i < MapHeigth; i++)
@@ -42,14 +31,14 @@ namespace RPGGame
 
                 for (int j = 0; j < MapWidth; j++)
                 {
-                    if (tilelist[listcounter] == 0)
+                    if (tileList.Tilelist(listcounter, FoxDraw.Level()) == 0)
                     {
-                        myfoxDraw.AddImage("Assets/floor.png", xcoordinate, ycoordinate);
+                        FoxDraw.AddImage("Assets/floor.png", xcoordinate, ycoordinate);
                         xcoordinate = xcoordinate + 50;
                     }
-                    if (tilelist [listcounter]==1)
+                    if (tileList.Tilelist(listcounter, FoxDraw.Level()) == 1)
                     {
-                        myfoxDraw.AddImage("Assets/wall.png", xcoordinate, ycoordinate);
+                        FoxDraw.AddImage("Assets/wall.png", xcoordinate, ycoordinate);
                         xcoordinate = xcoordinate + 50;
                     }
                     listcounter++;

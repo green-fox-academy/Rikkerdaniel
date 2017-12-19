@@ -9,22 +9,11 @@ namespace RPGGame
 {
     class Boss
     {
-        private foxDraw FoxDraw;
+        //private foxDraw FoxDraw;
         private int BossX1 = 0;
         private int BossY1 = 0;
         private int BossCurrentTile = 0;
-        public List<int> tilelist = new List<int> { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
-                                           0, 0, 0, 1, 0, 1 ,0 ,1 ,1 ,0,
-                                           0, 1, 1, 1,0 , 1, 0 , 1, 1,0 ,
-                                           0, 0, 0, 0, 0 ,1 , 0, 0, 0, 0,
-                                           1, 1, 1, 1, 0, 1, 1 ,1 ,1 ,0,
-                                           0, 1, 0, 1 ,0 ,0 ,0 , 0, 1 ,0,
-                                           0, 1 , 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 1, 1, 0, 0, 0, 0, 1, 0,
-                                           0, 0, 0, 1, 0, 1, 1, 0, 1, 0,
-                                           0, 1, 0, 1, 0, 1, 0, 0, 0, 0};
-
+        private TileList tileList = new TileList();
 
         public void BossPlace(foxDraw FoxDraw)
         {
@@ -34,7 +23,7 @@ namespace RPGGame
             BossCurrentTile = bossPlace;
             BossX1 = bossPlace % 10;
             BossY1 = bossPlace / 10;
-            if (tilelist[BossCurrentTile] == 1 )
+            if (tileList.Tilelist(BossCurrentTile,FoxDraw.Level()) == 1 )
             {
                 BossPlace(FoxDraw);
             }
