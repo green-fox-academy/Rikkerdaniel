@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace GreenFox
 {
-    public class foxDraw
+    public  class foxDraw
     {
         private const int TileSize = 50;
 

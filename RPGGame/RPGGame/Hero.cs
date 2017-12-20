@@ -12,6 +12,10 @@ namespace RPGGame
 
         public int Level { get; set; }
         public int CurentPlace { get; set; }
+        public Hero()
+        {
+            ATK = 2;
+        }
         // private foxDraw FoxDraw;
         private int CurrentX = 0;
         private int CurrentY = 0;

@@ -10,6 +10,10 @@ namespace RPGGame
     class Skeletons : Caracter
     {
         public int Level { get; set; }
+        public Skeletons()
+        {
+            HP = 3;
+        }
         //private foxDraw FoxDraw;
         private int SkeletonX1 = 0;
         private int SkeletonY1 = 0;

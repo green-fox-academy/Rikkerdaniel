@@ -74,12 +74,30 @@ namespace RPGGame
             }
             if (e.Key == Key.Space)
             {
-                if (hero.CurrentTile == boss.BossCurrentTile||
-                    hero.CurrentTile == skeleton .Skeleton1CurrentTile ||
-                    hero.CurrentTile == skeleton.Skeleton2CurrentTile||
-                    hero.CurrentTile == skeleton.Skeleton3CurrentTile)
+                if (hero.CurrentTile == boss.BossCurrentTile)
                 {
+                    int a = 0;
+                    do
+                    {
+                        a =boss.HP - hero.ATK;
+                        if (a<=0)
+                        {
+                            FoxDraw.SetPosition(FoxDraw.Tiles[7],  5000,  5000);
+                        }
+                    } while (a<0);
                     MessageBox.Show("fight");
+                }
+                if (hero.CurrentTile == skeleton.Skeleton1CurrentTile)
+                {
+
+                }
+                if (hero.CurrentTile == skeleton.Skeleton2CurrentTile)
+                {
+
+                }
+                if (hero.CurrentTile == skeleton.Skeleton3CurrentTile)
+                {
+
                 }
             }
            

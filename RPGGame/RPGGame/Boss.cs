@@ -9,6 +9,7 @@ namespace RPGGame
 {
     class Boss
     {
+        public int HP { get; set; } = 3;
         private int BossX1 = 0;
         private int BossY1 = 0;
         public int BossCurrentTile = 0;
