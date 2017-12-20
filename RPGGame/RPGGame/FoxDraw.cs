@@ -63,7 +63,7 @@ namespace GreenFox
         }
         public int Level()
         {
-            int level =2;
+            int level =1;
             return level;
         }
     }

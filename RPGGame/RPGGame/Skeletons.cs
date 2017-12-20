@@ -13,13 +13,13 @@ namespace RPGGame
         //private foxDraw FoxDraw;
         private int SkeletonX1 = 0;
         private int SkeletonY1 = 0;
-        private int Skeleton1CurrentTile = 0;
+        public int Skeleton1CurrentTile = 0;
         private int SkeletonX2 = 0;
         private int SkeletonY2 = 0;
-        private int Skeleton2CurrentTile = 0;
+        public int Skeleton2CurrentTile = 0;
         private int SkeletonX3 = 0;
         private int SkeletonY3 = 0;
-        private int Skeleton3CurrentTile = 0;
+        public int Skeleton3CurrentTile = 0;
         private TileList tileList = new TileList();
 
         public Random random = new Random();
@@ -62,10 +62,10 @@ namespace RPGGame
         {
             double ghostX = random.NextDouble();
             double ghostY = random.NextDouble();
-            FoxDraw.SetPosition(FoxDraw.Tiles[4], (SkeletonX1) * 50, (SkeletonY1) * 50);
-            FoxDraw.SetPosition(FoxDraw.Tiles[5], (SkeletonX2) * 50, SkeletonY2 * 50);
-            FoxDraw.SetPosition(FoxDraw.Tiles[6], (SkeletonX3) * 50, SkeletonY3 * 50);
-            FoxDraw.SetPosition(FoxDraw.Tiles[8], ghostX * 500, ghostY * 500);
+        //    FoxDraw.SetPosition(FoxDraw.Tiles[4], (SkeletonX1) * 50, (SkeletonY1) * 50);
+        //    FoxDraw.SetPosition(FoxDraw.Tiles[5], (SkeletonX2) * 50, SkeletonY2 * 50);
+        //    FoxDraw.SetPosition(FoxDraw.Tiles[6], (SkeletonX3) * 50, SkeletonY3 * 50);
+        //    FoxDraw.SetPosition(FoxDraw.Tiles[8], ghostX * 500, ghostY * 500);
         }
     }
 }

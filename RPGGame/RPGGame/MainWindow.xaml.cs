@@ -20,12 +20,11 @@ namespace RPGGame
     {
         private foxDraw FoxDraw;
         private Hero hero = new Hero();
-        public int ClicCounter=0;
+        private Boss boss = new Boss();
+        private Skeletons skeleton = new Skeletons();
+        public int ClicCounter = 0;
         private Skeletons Skeleton1 = new Skeletons();
         private int Level = 0;
-
-       
-
 
         public MainWindow()
         {
@@ -33,7 +32,7 @@ namespace RPGGame
 
             InitializeComponent();
             var foxDraw = new foxDraw(canvas);
-            
+
             var mymap = new Map(foxDraw);
             mymap.MapCreater();
             FoxDraw = new foxDraw(canvas);
@@ -47,11 +46,8 @@ namespace RPGGame
             FoxDraw.AddImage("Assets/skeleton.png", 0, 0);
             FoxDraw.AddImage("Assets/boss.png", 0, 0);
             FoxDraw.AddImage("Assets/pixil-layer-Background (1).png", 0, 0);
-            var skeleton = new Skeletons();
             skeleton.SkeletonPlace(FoxDraw);
-            var boss = new Boss();
             boss.BossPlace(FoxDraw);
-
         }
         private void KeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -72,15 +68,21 @@ namespace RPGGame
                 hero.HeroRght(FoxDraw);
             }
             ClicCounter++;
-            if (ClicCounter%2==0)
+            if (ClicCounter % 2 == 0)
             {
                 Skeleton1.SkeletonMove(FoxDraw);
-               
             }
-            //if (hero current tile and monster current tile =)
-            //{
-            //    callll fight method
-            //}
+            if (e.Key == Key.Space)
+            {
+                if (hero.CurrentTile == boss.BossCurrentTile||
+                    hero.CurrentTile == skeleton .Skeleton1CurrentTile ||
+                    hero.CurrentTile == skeleton.Skeleton2CurrentTile||
+                    hero.CurrentTile == skeleton.Skeleton3CurrentTile)
+                {
+                    MessageBox.Show("fight");
+                }
+            }
+           
         }
     }
 }

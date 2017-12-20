@@ -9,12 +9,14 @@ namespace RPGGame
 {
     class Hero : Caracter
     {
-       
+
         public int Level { get; set; }
-       // private foxDraw FoxDraw;
-       private int CurrentX = 0;
+        public int CurentPlace { get; set; }
+        // private foxDraw FoxDraw;
+        private int CurrentX = 0;
         private int CurrentY = 0;
-       private int CurrentTile = 0;
+       public int CurrentTile = 0;
+        
         private TileList tileList = new TileList();
 
         public void HeroUp(foxDraw FoxDraw)

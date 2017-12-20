@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Boss.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Skeletons.cs" />
     <Compile Include="TileList.cs" />
     <Page Include="MainWindow.xaml">

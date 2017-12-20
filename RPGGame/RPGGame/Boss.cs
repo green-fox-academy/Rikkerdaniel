@@ -9,10 +9,9 @@ namespace RPGGame
 {
     class Boss
     {
-        //private foxDraw FoxDraw;
         private int BossX1 = 0;
         private int BossY1 = 0;
-        private int BossCurrentTile = 0;
+        public int BossCurrentTile = 0;
         private TileList tileList = new TileList();
 
         public void BossPlace(foxDraw FoxDraw)
