@@ -76,16 +76,26 @@ namespace RPGGame
             {
                 if (hero.CurrentTile == boss.BossCurrentTile)
                 {
-                    int a = 0;
+                    int a = boss.HP;
+                    int b = hero.HP;
                     do
                     {
-                        a =boss.HP - hero.ATK;
+                        
+                        a=a  - hero.ATK;
                         if (a<=0)
                         {
                             FoxDraw.SetPosition(FoxDraw.Tiles[7],  5000,  5000);
+                            break;
                         }
-                    } while (a<0);
-                    MessageBox.Show("fight");
+                        b = b - boss.ATK;
+                        if (b<=0)
+                        {
+                            MessageBox.Show("You are dead");
+                            break;
+                        }
+
+                    } while (true);
+                   
                 }
                 if (hero.CurrentTile == skeleton.Skeleton1CurrentTile)
                 {

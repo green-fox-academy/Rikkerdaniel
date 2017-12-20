@@ -15,6 +15,7 @@ namespace RPGGame
         public Hero()
         {
             ATK = 2;
+            HP = 4;
         }
         // private foxDraw FoxDraw;
         private int CurrentX = 0;
