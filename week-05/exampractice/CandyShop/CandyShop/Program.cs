@@ -19,7 +19,7 @@ namespace MySuperCandyShop
             candyShop.Sell("candy", 1);
             candyShop.PrintInfo();
             candyShop.Raise(5);
-            candyShop.Sell("lollipop", 2);
+            candyShop.Sell("lollipop", 1);
             candyShop.PrintInfo();
             candyShop.BuySugar(300);
             candyShop.PrintInfo();

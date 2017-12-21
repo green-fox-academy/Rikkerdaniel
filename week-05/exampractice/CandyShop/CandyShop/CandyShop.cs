@@ -9,7 +9,7 @@ namespace MySuperCandyShop
     public class CandyShop
     {
         Sweets SweetySweety;
-        public double Income { get; set; } = 0;
+        public double Income { get; set; } = 100;
         public double SugarInStock { get; set; }
         private int lollipopsInStock = 0;
         private int CandysInStock = 0;
@@ -96,7 +96,7 @@ namespace MySuperCandyShop
         {
             foreach (Sweets sweet in CandyStorage)
             {
-                sweet.Price = sweet.Price * (1.0* Convert.ToDouble(percentage) / 100.0);
+                sweet.Price = sweet.Price * (1.0+Convert.ToDouble(percentage) / 100.0);
                 //SweetySweety.Price = SweetySweety.Price * (Convert.ToDouble(percentage) / 100.0);
 
             }
