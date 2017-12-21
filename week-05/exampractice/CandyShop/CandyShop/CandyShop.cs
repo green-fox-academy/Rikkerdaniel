@@ -96,7 +96,7 @@ namespace MySuperCandyShop
         {
             foreach (Sweets sweet in CandyStorage)
             {
-                sweet.Price = sweet.Price * ( Convert.ToDouble(percentage) / 100.0);
+                sweet.Price = sweet.Price * (1.0* Convert.ToDouble(percentage) / 100.0);
                 //SweetySweety.Price = SweetySweety.Price * (Convert.ToDouble(percentage) / 100.0);
 
             }
