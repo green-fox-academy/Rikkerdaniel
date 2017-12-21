@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CandyShop
+namespace MySuperCandyShop
 {
-    class Lollipop:Sweets
+    class Lollipop : Sweets
     {
-        public Lollipop() : base(10, 5, "Lollipop")
+        public Lollipop() : base(10, 5, "lollipop")
         {
 
         }

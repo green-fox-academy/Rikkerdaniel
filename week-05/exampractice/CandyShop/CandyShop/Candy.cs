@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CandyShop
+namespace MySuperCandyShop
 {
-    class Candy :Sweets
+    class Candy : Sweets
     {
-        public Candy():base(20,10,"Candy")
+        public Candy() : base(20, 10, "candy")
         {
 
         }

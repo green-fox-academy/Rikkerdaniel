@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CandyShop
+namespace MySuperCandyShop
 {
     public class Sweets
     {
