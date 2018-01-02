@@ -11,11 +11,12 @@ namespace Domino
         public static void Main(string[] args)
         {
             var dominoes = InitializeDominoes();
-            // You have the list of Dominoes
-            // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
-            // Create a function to write the dominous to the console in the following format
-            // eg: [2, 4], [4, 3], [3, 5] ...
-
+            foreach (var item in dominoes)
+            {
+                Console.Write("["+item.GetValues()[0] + " ," + item.GetValues()[1]+"]  ");
+            }
+            Console.WriteLine("stupidest execise!! why the hell is it good for me to use compare if i can do it better and easier whitout it ? why is this shit good for us ???");
+            Console.ReadLine();
         }
 
         public static List<Domino> InitializeDominoes()
