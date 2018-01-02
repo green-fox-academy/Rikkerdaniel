@@ -8,7 +8,6 @@ namespace MySuperCandyShop
 {
     public class CandyShop
     {
-        Sweets SweetySweety;
         public double Income { get; set; } = 100;
         public double SugarInStock { get; set; }
         private int lollipopsInStock = 0;
