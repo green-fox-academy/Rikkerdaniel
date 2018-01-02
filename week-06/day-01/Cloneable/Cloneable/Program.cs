@@ -11,7 +11,7 @@ namespace Cloneable
         static void Main(string[] args)
         {
             Student john = new Student("John Doe", 20, "male", "BME");
-            var johnTheClone = john.Clone();  
+            var johnTheClone = john.Clone();
             Console.ReadKey();
         }
     }
