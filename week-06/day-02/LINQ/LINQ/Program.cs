@@ -35,6 +35,10 @@ namespace LINQ
 
             string[] cities = { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
             var StartAEdndI = cities.Where(p => p.StartsWith("A")).Where(p => p.EndsWith("I"));
+
+            string a = "asdADmkuiklhgJUZHkloikuhdBVFG";
+            var isUpper = a.Where(p => char.IsUpper(p));
+
             Console.ReadKey();
         }
     }
