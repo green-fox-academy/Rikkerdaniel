@@ -14,6 +14,7 @@ namespace LINQ
             var evens = n.Where(p => (p % 2) == 0);
             var averageOfOdds = n.Where(p => (p % 2) == 1).Average();
             var squaredOfPositive = n.Where(p => p > 0).Select(p => p * p);
+            var squaredIsMoreThan20 = n.Where(p => (p * p) > 20);
         }
     }
 }
