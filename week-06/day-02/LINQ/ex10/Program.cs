@@ -16,8 +16,8 @@ namespace ex10
             foxes.Add(new Fox("ffghj", "please", "yellow"));
             foxes.Add(new Fox("babinéni", "pallida", "green"));
             foxes.Add(new Fox("cshőő", "corsac", "blue"));
-            var greens = foxes.Where(p => p.Color == "green").Select(p=>p);
-            var greenCorsac = foxes.Where(p => p.Color == "green").Where(p => p.Type == "corsac").Select(p=>p);
+            var greens = foxes.Where(p => p.Color == "green").Select(p => p);
+            var greenCorsac = foxes.Where(p => p.Color == "green").Where(p => p.Type == "corsac").Select(p => p);
             Console.ReadKey();
         }
     }

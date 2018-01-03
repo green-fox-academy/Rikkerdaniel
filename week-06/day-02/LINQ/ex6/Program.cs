@@ -13,8 +13,8 @@ namespace ex6
             string a = "ashgasvflksjvd aejosdbv svlciaeuovfdjbcn ";
 
             var frequencyOfChars = from x in a
-                                  group x by x into y
-                                  select y;
+                                   group x by x into y
+                                   select y;
 
             foreach (var charNo in frequencyOfChars)
             {
