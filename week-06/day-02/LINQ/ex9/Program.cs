@@ -11,7 +11,10 @@ namespace ex9
         static void Main(string[] args)
         {
             char[] c = { 'a', 'b', 'c', 'd' };
-            var charToString = c.ToString();
+            var charToString = new String(c);
+            var charToString1 = string.Join(string.Empty,c);
+            Console.WriteLine(charToString);
+            Console.ReadKey();
         }
     }
 }
