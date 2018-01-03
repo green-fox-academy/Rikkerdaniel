@@ -11,32 +11,7 @@ namespace LINQ
         static void Main(string[] args)
         {
             int[] n = { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
-          
             var evens = n.Where(p => (p % 2) == 0);
-
-            
-
-            
-
-            
-
-            int[] n1 = new int[] { 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2 };
-
-            var valuesCounted = (from r in n1
-                                 group r by r.CompareTo(r)
-                                 into g
-                                 select g.Count()).ToArray();
-            foreach (var item in valuesCounted)
-            {
-                Console.WriteLine(item);
-            }
-
-            
-
-            
-
-            
-
             Console.ReadKey();
         }
     }
