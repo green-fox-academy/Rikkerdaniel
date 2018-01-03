@@ -15,6 +15,16 @@ namespace LINQ
             var averageOfOdds = n.Where(p => (p % 2) == 1).Average();
             var squaredOfPositive = n.Where(p => p > 0).Select(p => p * p);
             var squaredIsMoreThan20 = n.Where(p => (p * p) > 20);
+            int[] n1 = new int[] { 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2 };
+            var valuesCounted = (from r in n1
+                                 group r by r.CompareTo(r)
+                                 into g
+                                 select g.Count()).ToArray();
+            foreach (var item in valuesCounted)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
         }
     }
 }
