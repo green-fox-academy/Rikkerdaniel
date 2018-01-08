@@ -9,10 +9,12 @@ namespace WebApplication1.Models
     {
         public long Id { get; set; }
         public string Content { get; set; }
+        static  long Counter = 0;
 
         public Greeting(long id ,string content)
         {
-            Id = id;
+            Id = id+Counter;
+            Counter++;
             Content ="Hello, "+ content;
         }
     }
