@@ -13,7 +13,7 @@ namespace WebApplication1.Models
         public Greeting(long id ,string content)
         {
             Id = id;
-            Content = content;
+            Content ="Hello, "+ content;
         }
     }
 }

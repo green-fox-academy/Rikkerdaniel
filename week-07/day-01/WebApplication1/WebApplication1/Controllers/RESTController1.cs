@@ -19,9 +19,9 @@ namespace WebApplication1.Controllers
         }
 
         [Route("greeting")]
-        public IActionResult Greeting()
+        public IActionResult Greeting( [FromQuery]string name)
         {
-            var greet = new Greeting(1,"Árvíztűrő tükörfúrógép");
+            var greet = new Greeting(1,name );
             return new JsonResult(greet);
         }
     }
