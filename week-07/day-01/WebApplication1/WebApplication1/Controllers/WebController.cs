@@ -13,12 +13,9 @@ namespace WebApplication1.Controllers
     public class WebController : Controller
     {
         [Route("greeting")]
-        public IActionResult Greeting()
+        public IActionResult Greeting([FromQuery]string name)
         {
-            var greeting = new Greeting(1,"World")
-            {
-            };
-
+            var greeting = new Greeting(1, name);
             return View(greeting);
         }
     }
