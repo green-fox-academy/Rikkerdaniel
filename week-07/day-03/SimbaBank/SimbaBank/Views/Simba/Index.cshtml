@@ -1,21 +1,37 @@
 ﻿@model  System.Collections.Generic.List<SimbaBank.Models.BankAccount>
-    
+
 
     <html xmlns="http://www.w3.org/1999/xhtml">
+    <link rel="stylesheet" type="text/css" href="~/stylet.css" />
     <head>
         <title></title>
     </head>
     <body>
         @foreach (var BankAccount in @Model)
     {
+        if(BankAccount.IsKing)
+        {
             <table>
                 <tr>
-                    <td>@BankAccount.Name</td>
-                    <td>@BankAccount.Balance</td>
-                    <td>@BankAccount.Currency</td>
-                    <td>@BankAccount.AnimalType</td>
+                    <td> <h1>@BankAccount.Name</h1></td>
+                    <td >@BankAccount.Balance</td>
+                    <td >@BankAccount.Currency</td>
+                    <td >@BankAccount.AnimalType</td>
                 </tr>
             </table>
+         }
+        else
+        {
+            <table>
+                <tr>
+                    <td >@BankAccount.Name</td>
+                    <td >@BankAccount.Balance</td>
+                    <td >@BankAccount.Currency</td>
+                    <td >@BankAccount.AnimalType</td>
+                </tr>
+            </table>
+        }
+
     }
     </body>
 </html>

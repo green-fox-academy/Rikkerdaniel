@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SimbaBank.Models;
-using SimbaBank.ViewModels;
+
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,7 +13,7 @@ namespace SimbaBank.Controllers
     [Route("")]
     public class SimbaController : Controller
     {
-        public static List<BankAccount> Account  = new List<BankAccount>()
+        public static List<BankAccount> Account = new List<BankAccount>()
         {
         #region
             new BankAccount()
@@ -21,7 +21,8 @@ namespace SimbaBank.Controllers
                 Name = "Simba",
                 Balance = 2000.01F,
                 Currency ="Zebra",
-                AnimalType = "Animal.Lion"
+                AnimalType = "Animal.Lion",
+                IsKing =true
 
              },
              new BankAccount()
@@ -29,7 +30,8 @@ namespace SimbaBank.Controllers
                 Name = "aslan",
                 Balance = 21230.01F,
                 Currency ="Zebra",
-                AnimalType = "Animal.Lion"
+                AnimalType = "Animal.Lion",
+                IsKing =false
 
              },
               new BankAccount()
@@ -37,7 +39,8 @@ namespace SimbaBank.Controllers
                 Name = "Harambe",
                 Balance = 4320.01F,
                 Currency ="Banana",
-                AnimalType = "Animal.Gorilla"
+                AnimalType = "Animal.Gorilla",
+                IsKing =false
 
              },
                new BankAccount()
@@ -45,7 +48,8 @@ namespace SimbaBank.Controllers
                 Name = "Pumba",
                 Balance = 10000.01F,
                 Currency ="bug",
-                AnimalType = "Animal.Pig"
+                AnimalType = "Animal.Pig",
+                IsKing =false
 
              },
                 new BankAccount()
@@ -53,7 +57,8 @@ namespace SimbaBank.Controllers
                 Name = "Timon",
                 Balance = 123400.01F,
                 Currency ="bug",
-                AnimalType = "Animal.Suricata"
+                AnimalType = "Animal.Suricata",
+                IsKing =false
 
              }
 

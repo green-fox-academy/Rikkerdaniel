@@ -28,6 +28,7 @@ namespace SimbaBank
             }
 
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }
