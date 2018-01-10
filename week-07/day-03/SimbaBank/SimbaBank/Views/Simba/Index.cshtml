@@ -1,17 +1,21 @@
-﻿@model  SimbaBank.Models.BankAccount
+﻿@model  System.Collections.Generic.List<SimbaBank.Models.BankAccount>
+    
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-    <table>
-        <tr>
-            <td>@Model.Name</td> 
-            <td>@Model.Balance</td>
-            <td>@Model.Currency</td>
-            <td>@Model.AnimalType</td>
-        </tr>  
-    </table>  
-</body>
-</html>  
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        @foreach (var BankAccount in @Model)
+    {
+            <table>
+                <tr>
+                    <td>@BankAccount.Name</td>
+                    <td>@BankAccount.Balance</td>
+                    <td>@BankAccount.Currency</td>
+                    <td>@BankAccount.AnimalType</td>
+                </tr>
+            </table>
+    }
+    </body>
+</html>
