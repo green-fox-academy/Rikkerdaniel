@@ -87,5 +87,13 @@ namespace SimbaBank.Controllers
             }
                 return RedirectToAction("Index");
         }
+
+        [HttpPost("newAcc")]
+        public IActionResult NewAcc(BankAccount bankAccount)
+        {
+            Account.Add(bankAccount);
+            return RedirectToAction("Index");
+        }
+
     }
 }
