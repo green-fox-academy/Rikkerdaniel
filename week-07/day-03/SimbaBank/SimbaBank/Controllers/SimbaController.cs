@@ -19,46 +19,46 @@ namespace SimbaBank.Controllers
             new BankAccount()
              {
                 Name = "Simba",
-                Balance = 2000.01F,
+                Balance = 2000,
                 Currency ="Zebra",
                 AnimalType = "Animal.Lion",
-                IsKing =true
+                IsKing = true
 
              },
              new BankAccount()
              {
                 Name = "aslan",
-                Balance = 21230.01F,
+                Balance = 21230,
                 Currency ="Zebra",
                 AnimalType = "Animal.Lion",
-                IsKing =false
+                IsKing = false
 
              },
               new BankAccount()
              {
                 Name = "Harambe",
-                Balance = 4320.01F,
+                Balance = 4320.01,
                 Currency ="Banana",
                 AnimalType = "Animal.Gorilla",
-                IsKing =false
+                IsKing = false
 
              },
                new BankAccount()
              {
                 Name = "Pumba",
-                Balance = 10000.01F,
+                Balance = 10000.01,
                 Currency ="bug",
                 AnimalType = "Animal.Pig",
-                IsKing =false
+                IsKing = false
 
              },
                 new BankAccount()
              {
                 Name = "Timon",
-                Balance = 123400.01F,
+                Balance = 123400.01,
                 Currency ="bug",
                 AnimalType = "Animal.Suricata",
-                IsKing =false
+                IsKing = false
 
              }
 

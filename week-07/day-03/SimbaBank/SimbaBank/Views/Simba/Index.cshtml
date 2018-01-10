@@ -13,10 +13,10 @@
         {
             <table>
                 <tr>
-                    <td> <h1>@BankAccount.Name</h1></td>
-                    <td >@BankAccount.Balance</td>
-                    <td >@BankAccount.Currency</td>
-                    <td >@BankAccount.AnimalType</td>
+                    <td> <h4>@BankAccount.Name</h4></td>
+                    <td ><h4>@BankAccount.Balance.ToString("0.##")</h4></td>
+                    <td ><h4>@BankAccount.Currency</h4></td>
+                    <td ><h4>@BankAccount.AnimalType</h4></td>
                 </tr>
             </table>
          }
@@ -25,7 +25,7 @@
             <table>
                 <tr>
                     <td >@BankAccount.Name</td>
-                    <td >@BankAccount.Balance</td>
+                    <td >@BankAccount.Balance.ToString("0.##")</td>
                     <td >@BankAccount.Currency</td>
                     <td >@BankAccount.AnimalType</td>
                 </tr>
