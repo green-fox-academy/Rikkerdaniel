@@ -70,5 +70,22 @@ namespace SimbaBank.Controllers
         {
             return View(Account);
         }
+
+        [HttpPost("add")]
+        public IActionResult AddBalance()
+        {
+            foreach (var BankAccount in Account)
+            {
+                if (BankAccount.IsKing)
+                {
+                    BankAccount.Balance += 100;
+                }
+                else
+                {
+                    BankAccount.Balance += 10;
+                }
+            }
+                return RedirectToAction("Index");
+        }
     }
 }
