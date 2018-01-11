@@ -21,6 +21,7 @@ namespace QuestionLine
                 app.UseDeveloperExceptionPage();
             }
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }

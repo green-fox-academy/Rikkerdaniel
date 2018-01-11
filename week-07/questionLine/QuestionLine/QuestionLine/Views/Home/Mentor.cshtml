@@ -1,0 +1,27 @@
+﻿@model System.Collections.Generic.List<QuestionLine.Models.Person>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link href="~/StyleSheet.css" rel="stylesheet" />
+        <meta http-equiv="refresh" content="5">
+        <title></title>
+    </head>
+    <body>
+        @if (@Model.Count < 1)
+        {
+            <h1>There is no questions right now </h1>
+        }
+        @if (@Model.Count >= 1)
+        {
+        @foreach (var person in @Model)
+        {
+            <form action="/removeLine" method="post">
+                <input type="text" name="name" value="@person.Name">
+                <input type="submit" value="Submit">
+            </form>
+        }
+        }
+
+      
+    </body>
+</html>
