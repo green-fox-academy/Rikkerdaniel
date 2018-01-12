@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: lightgray;
+    background-color: lightblue;
 }
 
 .navigation {
@@ -24,13 +24,17 @@ p {
 h1 {
     text-align: center;
 }
+div{
 
-button {
-    border-radius: 5px;
-    padding: 5px;
+}
+
+.button {   
+    padding: 5px ;
 }
 
 form {
+    padding-left: 45% ;
+    align-items: center;
     border-radius: 3px;
 }
 
