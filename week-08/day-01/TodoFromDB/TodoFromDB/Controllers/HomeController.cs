@@ -27,6 +27,13 @@ namespace TodoFromDB.Controllers
             return View(TodoRepository.ListOfToDos());
         }
 
+        [HttpGet("AddNew")]
+        public IActionResult AddNew()
+        {
+
+            return View();
+        }
+
         [HttpPost("Add")]
         public IActionResult Add(string Title)
         {
@@ -43,6 +50,19 @@ namespace TodoFromDB.Controllers
         {
             TodoRepository.DeletTodo(id);
 
+            return RedirectToAction("Todo");
+        }
+
+        [HttpGet("Update")]
+        public IActionResult Update()
+        {
+            return View();
+        }
+
+        [HttpPost("Upgrade")]
+        public IActionResult Upgrade(string Title, bool IsDone, bool IsUrgent)
+        {
+            TodoRepository.Update(Title, IsDone, IsUrgent);
             return RedirectToAction("Todo");
         }
     }

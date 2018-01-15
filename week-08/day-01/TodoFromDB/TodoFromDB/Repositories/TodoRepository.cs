@@ -44,5 +44,11 @@ namespace TodoFromDB.Repositories
             TodoContext.SaveChanges();
         }
 
+        public void Update(string title , bool done , bool urgent)
+        {
+            var upgrade = TodoContext.Todos.Where(p => p.Title == title);
+            TodoContext.Todos.Update(upgrade);
+        }
+
     }
 }
