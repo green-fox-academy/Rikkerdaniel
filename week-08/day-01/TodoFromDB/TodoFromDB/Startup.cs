@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using TodoFromDB.Entities;
 using Microsoft.EntityFrameworkCore;
+using TodoFromDB.Models;
+using TodoFromDB.Repositories;
 
 namespace TodoFromDB
 {
@@ -19,6 +21,9 @@ namespace TodoFromDB
         {
             services.AddMvc();
             services.AddDbContext<TodoContext>(options =>options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TodoFromDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddScoped<TodoContext>();
+            services.AddScoped<Todo>();
+            services.AddScoped<TodoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
