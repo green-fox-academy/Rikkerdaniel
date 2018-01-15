@@ -37,5 +37,13 @@ namespace TodoFromDB.Controllers
             TodoRepository.AddTodo(newTodo);
             return RedirectToAction("Todo");
         }
+
+        [HttpPost("Remove")]
+        public IActionResult Remove(long id)
+        {
+            TodoRepository.DeletTodo(id);
+
+            return RedirectToAction("Todo");
+        }
     }
 }

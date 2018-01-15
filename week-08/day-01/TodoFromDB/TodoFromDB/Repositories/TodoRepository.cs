@@ -27,11 +27,22 @@ namespace TodoFromDB.Repositories
 
             return ListOfToDos;
         }
+
         public void AddTodo(Todo todo)
         {
             TodoContext.Add(todo);
             TodoContext.SaveChanges();
-
         }
+
+        public void DeletTodo(long id)
+        {
+            var RemoveList = TodoContext.Todos.FirstOrDefault(t => t.Id == id);
+            if (RemoveList != null)
+            {
+                TodoContext.Todos.Remove(RemoveList);
+            }
+            TodoContext.SaveChanges();
+        }
+
     }
 }
