@@ -46,8 +46,17 @@ namespace TodoFromDB.Repositories
 
         public void Update(string title , bool done , bool urgent)
         {
-            var upgrade = TodoContext.Todos.Where(p => p.Title == title);
-            TodoContext.Todos.Update(upgrade);
+            Todo todo = new Todo()
+            {
+                Title = title,
+                IsDone=done,
+                IsUrgent=urgent
+            };
+            var todoToUpdate = TodoContext.Todos.FirstOrDefault(x => x.Title == title);
+            todoToUpdate.Title = todo.Title;
+            todoToUpdate.IsDone = todo.IsDone;
+            todoToUpdate.IsUrgent = todo.IsUrgent;
+            TodoContext.SaveChanges();
         }
 
     }
