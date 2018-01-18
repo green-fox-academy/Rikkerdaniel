@@ -37,5 +37,19 @@ namespace RedditProject.Repositories
             RedditContext.Add(newPost);
             RedditContext.SaveChanges();
         }
+
+        public void UpdatePlus(long id)
+        {
+            var postToUpdate = RedditContext.Reddits.FirstOrDefault(x => x.Id == id);
+            postToUpdate.Score += 1;
+            RedditContext.SaveChanges();
+        }
+
+        public void UpdateMinus(long id)
+        {
+            var postToUpdate = RedditContext.Reddits.FirstOrDefault(x => x.Id == id);
+            postToUpdate.Score += -1;
+            RedditContext.SaveChanges();
+        }
     }
 }

@@ -7,7 +7,7 @@ using RedditProject.Repositories;
 
 namespace RedditProject.Controllers
 {
-    [Route("")]
+    [Route("posts")]
     public class HomeController : Controller
     {
 
@@ -18,7 +18,7 @@ namespace RedditProject.Controllers
 
         public RedditRepository RedditRepository { get; set; }
 
-        [Route("posts")]
+        [Route("")]
         public IActionResult Index()
         {
             return View(RedditRepository.PostList());
@@ -36,6 +36,20 @@ namespace RedditProject.Controllers
         {
            
            RedditRepository.AddPost(content);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("UpdatePlus")]
+        public IActionResult UpdatePlus(long id)
+        {
+            RedditRepository.UpdatePlus(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("UpdateMinus")]
+        public IActionResult UpdateMinus(long id)
+        {
+            RedditRepository.UpdateMinus(id);
             return RedirectToAction("Index");
         }
     }

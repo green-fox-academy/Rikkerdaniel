@@ -13,11 +13,10 @@
         @foreach (var item in @Model)
         {
             <tr>
-                <form action="/Remove" method="post">
+                <form action="/posts/update" method="post">
                     <td>@item.Score</td>
-                    <button type="submit" name="id" value="@item.Id" class="btn-link">+</button>
-                    <button type="submit" name="id" value="@item.Id" class="btn-link">-</button>
-
+                    <a href="/posts/UpdatePlus"   name="id" value="@item.Id" >+</a>
+                    <a href="/posts/UpdateMinus" name="id" value="@item.Id">-</a>
                     <td>@item.Content</td>
                 </form>
             </tr>

@@ -8,7 +8,7 @@ namespace RedditProject.Models
     public class Reddit
     {
         public long Id { get; set; }
-        public int Score { get; set; }
+        public int Score { get; set; } = 0;
         public string Content { get; set; }
     }
 }
