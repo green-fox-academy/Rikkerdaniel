@@ -6,15 +6,15 @@
     <body>
         <h1>Todos for today</h1>
         
-        <a href="/todo/AddNew">Add new todo</a>
-        <a href="/todo/Update">Update todo</a>
+        <a href="/AddNew">Add new todo</a>
+        <a href="/Update">Update todo</a>
         <br />
         </br>
 
         @foreach (var item in @Model)
         {
             <tr>
-                <form action="/todo/Remove" method="post">
+                <form action="/Remove" method="post">
                     <td>@item.Id</td>
                     <td>@item.Title</td>
                     <td>@item.IsUrgent</td>

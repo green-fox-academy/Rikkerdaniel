@@ -1,0 +1,27 @@
+﻿@model System.Collections.Generic.List<RedditProject.Models.Reddit>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Posts</h1>
+
+        <a href="/AddNew">Add new Post</a>
+        <br />
+        </br>
+
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <form action="/Remove" method="post">
+                    <td>@item.Score</td>
+                    <button type="submit" name="id" value="@item.Id" class="btn-link">+</button>
+                    <button type="submit" name="id" value="@item.Id" class="btn-link">-</button>
+
+                    <td>@item.Content</td>
+                </form>
+            </tr>
+            <br />
+        }
+    </body>
+</html>

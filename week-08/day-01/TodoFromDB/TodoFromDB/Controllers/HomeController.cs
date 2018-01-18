@@ -10,7 +10,7 @@ using TodoFromDB.Models;
 
 namespace TodoFromDB.Controllers
 {
-    [Route("todo")]
+    [Route("")]
     public class HomeController : Controller
     {
         public HomeController(TodoRepository todoRepository)
@@ -20,6 +20,21 @@ namespace TodoFromDB.Controllers
 
         public TodoRepository TodoRepository { get; set; }
 
+        [Route("")]
+        public IActionResult LogIn()
+        {
+            return View();
+        }
+
+        [Route("Log")]
+        public IActionResult Log(string username, string password)
+        {
+            if (username == "asd" && password == "asd")
+            {
+                return RedirectToAction("Todo");
+            }
+            return RedirectToAction("LogIn");
+        }
 
         [Route("list")]
         public IActionResult Todo()
@@ -39,7 +54,7 @@ namespace TodoFromDB.Controllers
         {
             Todo newTodo = new Todo()
             {
-                Title =Title
+                Title = Title
             };
             TodoRepository.AddTodo(newTodo);
             return RedirectToAction("Todo");

@@ -1,11 +1,12 @@
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
     <h1> Update ToDo</h1>
     <br />
-    <form action="/todo/Upgrade" method="post">
+    <form action="/Upgrade" method="post">
         <br />
        
         <br />
@@ -16,6 +17,8 @@
         <input type="checkbox" name ="IsUrgent" value="true" /><br />
         <input type="submit" value="Submit">
     </form>
-    <a href="/todo/list">Cancel</a>
+    <a href="/list">Cancel</a>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
