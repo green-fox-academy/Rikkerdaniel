@@ -1,24 +1,49 @@
 ﻿@model System.Collections.Generic.List<RedditProject.Models.Reddit>
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h1>Posts</h1>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <h1>Posts</h1>
 
-        <a href="/posts/add">Add new Post</a>
-        <br />
-        </br>
+    <a href="/posts/add">Add new Post</a>
+    <br />
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Score</th>
+                <th scope="col">action+</th>
+                <th scope="col">action-</th>
+                <th scope="col">Content</th>
+            </tr>
+        </thead>
 
         @foreach (var item in @Model)
-        {
-            <tr>
-                <form action="/posts/UpdatePlus" method="post">
+            {
+            <tbody>
+                <tr class="table-default">
                     <td>@item.Score</td>
-                    <button type="submit" name="id" value="@item.Id" class="btn-link">+</button> </form><form action="/posts/UpdateMinus" method="post"><button type="submit" name="id" value="@item.Id" class="btn-link">-</button><td>@item.Content</td>
-                </form>
-            </tr>
-            <br />
-        }
-    </body>
+                    <td>
+                        <form action="/posts/UpdatePlus" method="post">
+                            <button  class="btn btn-link btn-lg" type="submit" name="id" value="@item.Id" >+</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/posts/UpdateMinus" method="post">
+                            <button  class="btn btn-link btn-lg "  type="submit" name="id" value="@item.Id" >-</button>
+                        </form>
+                    </td>
+                    <td>@item.Content</td>
+                </tr>
+            </tbody>
+            }
+
+    </table>
+
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
 </html>

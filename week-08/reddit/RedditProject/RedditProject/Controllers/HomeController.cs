@@ -7,6 +7,7 @@ using RedditProject.Repositories;
 
 namespace RedditProject.Controllers
 {
+    [Route("")]
     [Route("posts")]
     public class HomeController : Controller
     {

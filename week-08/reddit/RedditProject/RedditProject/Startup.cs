@@ -31,6 +31,7 @@ namespace RedditProject
                 app.UseDeveloperExceptionPage();
             }
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }
