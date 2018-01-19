@@ -1,4 +1,4 @@
-﻿@model System.Collections.Generic.List<QuestionLine.Models.Person>
+﻿@model System.Collections.Generic.List<QuestionLine.HomeController.waitingList>
 
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -19,7 +19,7 @@
                 @foreach (var person in @Model)
                 {
                     <form action="/removeLine" method="post">
-                        <input type="text" name="name" value="@person.Name" style="pointer-events:none">
+                        <input type="text" name="name" value="@person" style="pointer-events:none">
                         <input type="submit" value="Done">
                     </form>
                 }

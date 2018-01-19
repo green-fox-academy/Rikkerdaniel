@@ -1,15 +1,15 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <link href="~/StyleSheet.css" rel="stylesheet" />
-    <title></title>
-</head>
-<body>
-    <div>
-        <h1>Send your name to get in to the waiting line</h1>
-        <form action="/addLine" method="post">
-            <input type="text" name="Name" value="">
-            <input type="submit" value="Submit">
-        </form>
-    </div>  
-</body>
+﻿@model System.Collections.Generic.List<QuestionLine.Models.Person>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link href="~/StyleSheet.css" rel="stylesheet" />
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <h1>Send your name to get in to the waiting line</h1>
+            <form action="/addLine/@(Model.Person.Username)" method="post">
+                <button class="btn btn btn-lg " type="submit" >Get In line</button>
+            </form>
+        </div>
+    </body>
 </html>

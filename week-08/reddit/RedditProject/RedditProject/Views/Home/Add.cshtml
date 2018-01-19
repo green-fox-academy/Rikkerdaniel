@@ -4,16 +4,51 @@
     <title></title>
 </head>
 <body>
-    <h1> Add new Post</h1>
+    <nav style="position:fixed ; width:100%" class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">NotReddit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Add new Post<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
     <br />
-    <form action="/posts/addnew" method="post">
-        <br />
-        Add new:
-        <br />
-        <input type="text" name="content" value=""><br />
-        <input type="submit" value="Submit">
-    </form>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <br />
+    <br />
+    <table class="table table-hover">
+        <tbody>
+            <tr class="table-active">
+                <th scope="row"></th>
+                <td></td>
+                <td>
+                    <h1> Add new Post</h1>
+                    <fieldset>
+                        <legend></legend>
+                        <form action="/posts/addnew" method="post">
+                            <br />
+                            <div class="form-group">
+                                <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+                            </div>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </fieldset>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
