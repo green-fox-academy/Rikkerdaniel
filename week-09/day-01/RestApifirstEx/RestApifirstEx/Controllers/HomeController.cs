@@ -9,18 +9,36 @@ using Microsoft.AspNetCore.Mvc;
 namespace RestApifirstEx.Controllers
 {
     [Route("")]
+
     public class HomeController : Controller
     {
         [Route("")]
         public IActionResult Index()
         {
-             return File("index.html", "text/html");
+            return File("index.html", "text/html");
         }
 
         [HttpGet("doubling")]
-        public IActionResult Doubling()
+        public IActionResult Doubling(int? input)
         {
-            return Ok();
+            if (input == null)
+            {
+                return Json(new { error = "Please provide an input!" });
+            }
+            return Json(new { received = input, result = input * 2 });
+        }
+        [HttpGet("greeter")]
+        public IActionResult Greeter(string name, string title)
+        {
+            if (name == null )
+            {
+                return Json(new { error = "Please provide a name!" });
+            }
+            if (title == null)
+            {
+                return Json(new { error = "Please provide a title!" });
+            }
+            return Json(new { welcome_message = "Oh, hi there " + name + ", my dear " + title + "!" });
         }
     }
 }
