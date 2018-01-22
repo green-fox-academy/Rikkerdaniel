@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using RestApifirstEx.Entities;
+using RestApifirstEx.Models;
 
 namespace RestApifirstEx
 {
@@ -24,6 +27,9 @@ namespace RestApifirstEx
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<LogContext>(options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=RestApifirstEx;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddScoped<LogContext>();
+            services.AddScoped<Log>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
