@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RestApifirstEx.Models;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using RestApifirstEx.Services;
 
 namespace RestApifirstEx.Controllers
 {
@@ -13,6 +12,13 @@ namespace RestApifirstEx.Controllers
 
     public class HomeController : Controller
     {
+        public HomeController(LogService logService)
+        {
+            LogService = logService;
+        }
+
+        public LogService LogService { get; set; }
+
         [Route("")]
         public IActionResult Index()
         {
@@ -26,7 +32,7 @@ namespace RestApifirstEx.Controllers
             {
                 return Json(new { error = "Please provide an input!" });
             }
-            return Json(new { received = input, result = input * 2 });
+            return Json(new { received = input, result = LogService.Doubling(input) });
         }
 
         [HttpGet("greeter")]
@@ -40,7 +46,7 @@ namespace RestApifirstEx.Controllers
             {
                 return Json(new { error = "Please provide a title!" });
             }
-            return Json(new { welcome_message = "Oh, hi there " + name + ", my dear " + title + "!" });
+            return Json(new { welcome_message = LogService.Greeter(name, title) });
         }
 
         [HttpGet("appenda/{appendable}")]
@@ -50,33 +56,23 @@ namespace RestApifirstEx.Controllers
             {
                 return Unauthorized();
             }
-            return Json(new { appended = appendable + "a" });
+            return Json(new { appended = LogService.AppendA(appendable)});
         }
 
         [HttpPost("dountil/{what}")]
         public IActionResult DoUntil([FromRoute]string what, [FromBody] Item input)
         {
-            int sum = 0;
-            int fact = 1;
             if (input.until == null)
             {
                 return Json(new { error = "Please provide a number!" });
             }
-            if (what == "sum" )
+            if (what == "sum")
             {
-                for (int i = 1; i < input.until + 1; i++)
-                {
-                    sum += i;
-                }
-                return Json(new { result = sum });
+                return Json(new { result = LogService.DoUntilSum(input) });
             }
-            else if (what == "factor" )
+            else if (what == "factor")
             {
-                for (int i = 1; i < input.until+1; i++)
-                {
-                    fact = fact * i;
-                }
-                return Json(new { result = fact });
+                return Json(new { result = LogService.DoUntilFactor(input) });
             }
             else
             {
@@ -87,32 +83,23 @@ namespace RestApifirstEx.Controllers
         [HttpPost("arrays")]
         public IActionResult Arrays([FromBody] Arrays Item)
         {
-            if (Item.numbers==null||Item.what==null)
+            if (Item.numbers == null || Item.what == null)
             {
                 return Json(new { error = "Please provide what to do with the numbers!" });
             }
             else
             {
-                if (Item.what=="sum")
+                if (Item.what == "sum")
                 {
                     return Json(new { result = Item.numbers.Sum() });
                 }
-                else if (Item.what== "multiply")
+                else if (Item.what == "multiply")
                 {
-                    int multi = 1;
-                    for (int i = 0; i < Item.numbers.Length; i++)
-                    {
-                        multi = Item.numbers[i] * multi;
-                    }
-                    return Json(new { result = multi });
+                    return Json(new { result = LogService.ArrayMultiply(Item.numbers) });
                 }
-                else if (Item.what== "double")
+                else if (Item.what == "double")
                 {
-                    for (int i = 0; i < Item.numbers.Length; i++)
-                    {
-                        Item.numbers[i] = Item.numbers[i] * 2;
-                    }
-                    return Json(new { result = Item.numbers });
+                    return Json(new { result = LogService.ArrayDouble(Item.numbers) });
                 }
                 else
                 {
