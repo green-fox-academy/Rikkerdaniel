@@ -84,6 +84,43 @@ namespace RestApifirstEx.Controllers
             }
         }
 
+        [HttpPost("arrays")]
+        public IActionResult Arrays([FromBody] Arrays Item)
+        {
+            if (Item.numbers==null||Item.what==null)
+            {
+                return Json(new { error = "Please provide what to do with the numbers!" });
+            }
+            else
+            {
+                if (Item.what=="sum")
+                {
+                    return Json(new { result = Item.numbers.Sum() });
+                }
+                else if (Item.what== "multiply")
+                {
+                    int multi = 1;
+                    for (int i = 0; i < Item.numbers.Length; i++)
+                    {
+                        multi = Item.numbers[i] * multi;
+                    }
+                    return Json(new { result = multi });
+                }
+                else if (Item.what== "double")
+                {
+                    for (int i = 0; i < Item.numbers.Length; i++)
+                    {
+                        Item.numbers[i] = Item.numbers[i] * 2;
+                    }
+                    return Json(new { result = Item.numbers });
+                }
+                else
+                {
+                    return Json(new { result = Item.numbers.Sum() });
+                }
+            }
+        }
+
     }
 }
 
