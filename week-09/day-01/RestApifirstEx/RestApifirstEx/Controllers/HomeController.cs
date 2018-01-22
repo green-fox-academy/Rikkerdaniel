@@ -16,5 +16,11 @@ namespace RestApifirstEx.Controllers
         {
              return File("index.html", "text/html");
         }
+
+        [HttpGet("doubling")]
+        public IActionResult Doubling()
+        {
+            return Ok();
+        }
     }
 }
