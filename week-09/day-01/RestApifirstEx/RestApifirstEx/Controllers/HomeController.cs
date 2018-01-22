@@ -30,7 +30,7 @@ namespace RestApifirstEx.Controllers
         [HttpGet("greeter")]
         public IActionResult Greeter(string name, string title)
         {
-            if (name == null )
+            if (name == null)
             {
                 return Json(new { error = "Please provide a name!" });
             }
@@ -39,6 +39,15 @@ namespace RestApifirstEx.Controllers
                 return Json(new { error = "Please provide a title!" });
             }
             return Json(new { welcome_message = "Oh, hi there " + name + ", my dear " + title + "!" });
+        }
+        [HttpGet("appenda/{appendable}")]
+        public IActionResult AppendA(string appendable)
+        {
+            if (appendable == null)
+            {
+                return Unauthorized();
+            }
+            return Json(new { appended = appendable + "a" });
         }
     }
 }
