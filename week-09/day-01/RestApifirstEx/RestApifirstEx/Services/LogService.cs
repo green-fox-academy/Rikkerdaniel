@@ -77,5 +77,10 @@ namespace RestApifirstEx.Services
             }
             return item;
         }
+
+        public  void Log()
+        {
+            LogRepository.AddToDatabase("/log", "get logs");
+        }
     }
 }

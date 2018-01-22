@@ -108,6 +108,13 @@ namespace RestApifirstEx.Controllers
             }
         }
 
+        [HttpGet("log")]
+        public IActionResult Log()
+        {
+            LogService.Log();
+            return Json(new { entries = LogService.LogRepository.LogContext.Logs, entry_count = LogService.LogRepository.LogContext.Logs.ToList().Count });
+        }
+
     }
 }
 
