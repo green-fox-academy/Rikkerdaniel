@@ -86,36 +86,4 @@ namespace RestApifirstEx.Controllers
 
     }
 }
-//        [HttpPost("dountil/{what}")]
-//        public IActionResult Dountil([FromRoute] string what, [FromBody] Item input)
-//        {
-//            if (input.until != null)
-//            {
-//                switch (what)
-//                {
-
-//                    case "sum":
-//                        int sum = 0;
-//                        for (int i = 1; i < input.until + 1; i++)
-//                        {
-//                            sum += i;
-//                        }
-//                        return Json(new { result = sum });
-
-//                    case "factor":
-//                        int factorial = 1;
-//                        for (int i = 1; i < input.until + 1; i++)
-//                        {
-//                            factorial *= i;
-//                        }
-//                        return Json(new { result = factorial });
-
-//                    default:
-//                        break;
-//                }
-//            }
-//            return Json(new { error = "Please provide a number!" });
-//        }
-//    }
-//}
 
