@@ -13,14 +13,6 @@ namespace TenisDojo
         Player playerTwo = new Player();
         List<string> scoreList = new List<string>() { "Love", "Fifteen", "Thirty", "Forty" };
 
-
-        public string Logic(int score1, int score2)
-        {
-
-
-            return "aasd";
-        }
-
         public TennisGame1(string player1Name, string player2Name)
         {
             PlayerList.Add(playerOne);
