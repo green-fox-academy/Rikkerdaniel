@@ -59,6 +59,29 @@ namespace IAmGroot.IntegrationTests
             //assert
             Assert.Equal("{\"error\":\"I am Groot!\"}", json);
         }
+
+        [Fact]
+        public async Task YonduShouldReturnOk()
+        {
+            var response = await Client.GetAsync("/yondu?distance=10&time=10");
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task YonduShouldReturnJson()
+        {
+            var response = await Client.GetAsync("/yondu?distance=10&time=10");
+            string json = await response.Content.ReadAsStringAsync();
+            Assert.Equal("{\"distance\":10,\"time\":10,\"speed\":1}", json);
+        }
+
+        [Fact]
+        public async Task YonduShouldReturnErrorMessage()
+        {
+            var response = await Client.GetAsync("/yondu?distance=10&time=0");
+            string json = await response.Content.ReadAsStringAsync();
+            Assert.Equal("{\"error\":\"You Are Stupid!\"}", json);
+        }
     }
 
     

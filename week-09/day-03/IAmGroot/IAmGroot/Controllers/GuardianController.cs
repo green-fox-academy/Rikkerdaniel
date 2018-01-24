@@ -21,5 +21,15 @@ namespace IAmGroot.Controllers
             }
             return Json(new { recived= message, translated= "I am Groot!" });
         }
+
+        [HttpGet("yondu")]
+        public IActionResult YoundusArrow(int distance ,int time)
+        {
+            if (time==0)
+            {
+                return Json(new { error = "You Are Stupid!" });
+            }
+            return Json(new { Distance = distance, Time = time , Speed=distance/time });
+        }
     }
 }
