@@ -21,13 +21,13 @@ namespace IAmGroot.IntegrationTests
         }
 
         [Fact]
-        public async Task IndexShouldReturnOkStatus()
+        public async Task IndexShouldReturnNotOkStatus()
         {
             //act
             var response = await Client.GetAsync("/");
 
             //assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
 
         [Fact]
@@ -81,6 +81,13 @@ namespace IAmGroot.IntegrationTests
             var response = await Client.GetAsync("/yondu?distance=10&time=0");
             string json = await response.Content.ReadAsStringAsync();
             Assert.Equal("{\"error\":\"You Are Stupid!\"}", json);
+        }
+
+        [Fact]
+        public async Task YonduShouldReturnNotOk()
+        {
+            var response = await Client.GetAsync("/");
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 

@@ -11,7 +11,7 @@ namespace IAmGroot.Controllers
     [Route("")]
     public class GuardianController : Controller
     {
-        [Route("/")]
+        
         [HttpGet("groot")]
         public IActionResult Index(string message)
         {
@@ -25,7 +25,7 @@ namespace IAmGroot.Controllers
         [HttpGet("yondu")]
         public IActionResult YoundusArrow(int distance ,int time)
         {
-            if (time==0)
+            if (time==0||distance==0)
             {
                 return Json(new { error = "You Are Stupid!" });
             }
