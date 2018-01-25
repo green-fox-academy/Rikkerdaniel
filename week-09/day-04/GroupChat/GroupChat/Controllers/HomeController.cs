@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using GroupChat.Services;
 
 namespace GroupChat.Controllers
 {
     [Route("")]
     public class HomeController : Controller
     {
+        public HomeController(MessageService messageService)
+        {
+            MessageService = messageService;
+        }
+
+        public MessageService MessageService { get; set; }
+
         [HttpGet("")]
         public IActionResult LoginPage()
         {
@@ -28,7 +36,18 @@ namespace GroupChat.Controllers
         [HttpGet("chatroom")]
         public IActionResult ChatRoom()
         {
+            return View(MessageService.ListOfMessages());
+        }
 
+        [HttpPost("sendmessage")]
+        public IActionResult SendMessage(string Content,string user)
+        {
+            if (Content==null)
+            {
+                return RedirectToAction("ChatRoom");
+            }
+            MessageService.SendMessage(Content,user);
+            return RedirectToAction("ChatRoom");
         }
     }
 }

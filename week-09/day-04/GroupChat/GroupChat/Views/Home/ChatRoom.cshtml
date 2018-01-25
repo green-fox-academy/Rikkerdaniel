@@ -1,0 +1,21 @@
+﻿@model System.Collection.Generic.List<GroupChat.Models.Message>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @foreach (var item in @Model)
+    {
+        <tr>
+                <td>@item.User</td>
+                <td>@item.Content</td>
+                <td>@item.DateOfSend</td>
+        </tr>
+            <br />
+    }
+    <form action="/sendmessage" method="post">
+        <textarea class="form-control" rows="3" id="Content"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

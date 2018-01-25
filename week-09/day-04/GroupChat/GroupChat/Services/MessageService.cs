@@ -1,4 +1,5 @@
-﻿using GroupChat.Repositories;
+﻿using GroupChat.Models;
+using GroupChat.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,21 @@ namespace GroupChat.Services
 
         public MessageRepository MessageRepository { get; set; }
 
+        public List<Message> ListOfMessages()
+        {
+            List<Message> ListOfMessages = new List<Message>();
+
+            foreach (var item in MessageRepository.MessageContext.Messages)
+            {
+                ListOfMessages.Add(item);
+            }
+
+            return ListOfMessages;
+        }
+
+        internal void SendMessage(string Content, string user)
+        {
+            MessageRepository.SendMessage(Content,user);
+        }
     }
 }
