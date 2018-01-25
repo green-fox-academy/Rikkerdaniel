@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using GroupChat.Models;
 using GroupChat.Repositories;
 using GroupChat.Services;
+using GroupChat.ViewModels;
 
 namespace GroupChat
 {
@@ -24,6 +25,7 @@ namespace GroupChat
             services.AddScoped<Message>();
             services.AddScoped<MessageRepository>();
             services.AddScoped<MessageService>();
+            services.AddScoped<MessageViewModel>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -34,6 +36,7 @@ namespace GroupChat
             }
             
             app.UseMvc();
+            app.UseStaticFiles();
         }
     }
 }

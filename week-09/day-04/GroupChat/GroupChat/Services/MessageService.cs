@@ -1,5 +1,6 @@
 ﻿using GroupChat.Models;
 using GroupChat.Repositories;
+using GroupChat.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,15 @@ namespace GroupChat.Services
 {
     public class MessageService
     {
-        public  MessageService(MessageRepository messageRepository)
+        public  MessageService(MessageRepository messageRepository,MessageViewModel messageViewModel)
         {
             MessageRepository = messageRepository;
+            MessageViewModel = messageViewModel;
         }
 
         public MessageRepository MessageRepository { get; set; }
+        public MessageViewModel MessageViewModel { get; set; }
+      
 
         public List<Message> ListOfMessages()
         {

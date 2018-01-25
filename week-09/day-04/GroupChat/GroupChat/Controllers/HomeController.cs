@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GroupChat.Services;
+using GroupChat.Models;
 
 namespace GroupChat.Controllers
 {
@@ -16,8 +17,6 @@ namespace GroupChat.Controllers
         }
 
         public MessageService MessageService { get; set; }
-
-        public static string loggedUser { get; set; }
 
         [HttpGet("")]
         public IActionResult LoginPage()
@@ -32,25 +31,28 @@ namespace GroupChat.Controllers
             {
                 return RedirectToAction("LoginPage");
             }
-            loggedUser = user;
-            return Redirect("chatroom");
+            MessageService.MessageViewModel.CurrentUser = user;
+
+            return Redirect($"chatroom/{user}");
         }
 
-        [HttpGet("chatroom")]
-        public IActionResult ChatRoom()
+        [HttpGet("chatroom/{user}")]
+        public IActionResult ChatRoom([FromRoute] string user)
         {
-            return View(MessageService.ListOfMessages());
+            MessageService.MessageViewModel.CurrentUser = user;
+            MessageService.MessageViewModel.MessageList = MessageService.ListOfMessages();
+            return View(MessageService.MessageViewModel);
         }
 
         [HttpPost("sendmessage")]
-        public IActionResult SendMessage(string Content)
+        public IActionResult SendMessage(string Content ,  string user)
         {
-            if (Content==null)
+            if (Content == null)
             {
-                return RedirectToAction("ChatRoom");
+                return RedirectToAction($"chatroom/{user}");
             }
-            MessageService.SendMessage(Content,loggedUser);
-            return RedirectToAction("ChatRoom");
+            MessageService.SendMessage(Content, user);
+            return Redirect($"chatroom/{user}");
         }
     }
 }

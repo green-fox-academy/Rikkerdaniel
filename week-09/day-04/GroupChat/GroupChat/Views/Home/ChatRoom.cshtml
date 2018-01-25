@@ -1,25 +1,52 @@
-﻿@model System.Collections.Generic.List<GroupChat.Models.Message>
+﻿@model  GroupChat.ViewModels.MessageViewModel
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
     <title></title>
 </head>
 <body>
-    @foreach (var item in @Model)
-    {
-        <tr>
-                <td>@item.User</td>
-                <td>@item.Content</td>
-                <td>@item.DateOfSend</td>
-        </tr>
-            <br />
-    }
+    <div class="card border-primary mb-3" style=" display:flex;  width:400px; height:500px;">
+        <div class="card-header"></div>
+        <div class="card-body text-primary" style="overflow:scroll ;flex-direction:column-reverse" http-equiv="refresh" content="3">
+            <h4 class="card-title">GroupChat</h4>
+            <p class="card-text">
+                @foreach (var item in @Model.MessageList)
+            {
+                if (item.User == @Model.CurrentUser)
+                {
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@item.User</h3>
+                            </div>
+                            <div class="panel-body">
+                                @item.Content
+                                @item.DateOfSend
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@item.User</div>
+                            <div class="panel-body">
+                                @item.Content
+                                @item.DateOfSend
+                            </div>
+                        </div>
+                    }
+                }
+            </p>
+        </div>
+        <div style="display:flex; position:fixed; margin-top:550px;">
+            <form action="/sendmessage" method="post">
+                <input type="text" name="Content" value=""><br />
+                <input type="hidden" name="user" value="@Model.CurrentUser"><br />
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 
-   
-    <form action="/sendmessage" method="post">
-        <input type="text" name="Content" value=""><br />
-        <input type="submit" value="Submit">
-    </form>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
