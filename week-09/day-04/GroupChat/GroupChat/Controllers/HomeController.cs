@@ -17,6 +17,8 @@ namespace GroupChat.Controllers
 
         public MessageService MessageService { get; set; }
 
+        public static string loggedUser { get; set; }
+
         [HttpGet("")]
         public IActionResult LoginPage()
         {
@@ -24,13 +26,14 @@ namespace GroupChat.Controllers
         }
 
         [HttpPost("userlog")]
-        public IActionResult UserLog(string username)
+        public IActionResult UserLog(string user)
         {
-            if (username == null)
+            if (user == null)
             {
                 return RedirectToAction("LoginPage");
             }
-            return RedirectToAction("ChatRoom");
+            loggedUser = user;
+            return Redirect("chatroom");
         }
 
         [HttpGet("chatroom")]
@@ -40,13 +43,13 @@ namespace GroupChat.Controllers
         }
 
         [HttpPost("sendmessage")]
-        public IActionResult SendMessage(string Content,string user)
+        public IActionResult SendMessage(string Content)
         {
             if (Content==null)
             {
                 return RedirectToAction("ChatRoom");
             }
-            MessageService.SendMessage(Content,user);
+            MessageService.SendMessage(Content,loggedUser);
             return RedirectToAction("ChatRoom");
         }
     }
