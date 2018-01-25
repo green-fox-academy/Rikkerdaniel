@@ -1,4 +1,4 @@
-﻿@model System.Collection.Generic.List<GroupChat.Models.Message>
+﻿@model System.Collections.Generic.List<GroupChat.Models.Message>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -15,9 +15,10 @@
             <br />
     }
     <form action="/sendmessage" method="post">
-        <textarea class="form-control" rows="3" id="Content"></textarea>
+        <input type="text" name="Content" value=""><br />
         <input type="submit" value="Submit">
     </form>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
