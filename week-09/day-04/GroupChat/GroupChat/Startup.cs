@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using GroupChat.Entities;
+using Microsoft.EntityFrameworkCore;
+using GroupChat.Models;
+using GroupChat.Repositories;
+using GroupChat.Services;
 
 namespace GroupChat
 {
@@ -14,6 +19,11 @@ namespace GroupChat
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<MessageContext>(options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GroupChat;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddScoped<MessageContext>();
+            services.AddScoped<Message>();
+            services.AddScoped<MessageRepository>();
+            services.AddScoped<MessageService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

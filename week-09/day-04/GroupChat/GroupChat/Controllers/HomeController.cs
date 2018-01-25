@@ -25,5 +25,10 @@ namespace GroupChat.Controllers
             return RedirectToAction("ChatRoom");
         }
 
+        [HttpGet("chatroom")]
+        public IActionResult ChatRoom()
+        {
+
+        }
     }
 }
