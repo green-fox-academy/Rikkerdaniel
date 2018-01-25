@@ -2,53 +2,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    
+  
     <title></title>
 </head>
 <body>
-    <div class="card border-primary mb-3" style=" display:flex;  width:400px; height:500px;">
+    <nav style="position:fixed ; width:100% " class="navbar navbar-expand-lg navbar-dark bg-primary" p>
+        <a class="navbar-brand" href="#">AsbestChat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">LogOut</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+
+    <div class="card border-primary mb-3" style=" display:flex; position:center; width:600px; height:500px;flex-direction:column-reverse" meta http-equiv="refresh" content="5">
         <div class="card-header"></div>
-        <div class="card-body text-primary" style="overflow:scroll ;flex-direction:column-reverse" http-equiv="refresh" content="3">
+        <div class="card-body text-primary" style="overflow:scroll ;flex-direction:column-reverse">
             <h4 class="card-title">GroupChat</h4>
             <p class="card-text">
                 @foreach (var item in @Model.MessageList)
-            {
-                if (item.User == @Model.CurrentUser)
                 {
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">@item.User</h3>
-                            </div>
-                            <div class="panel-body">
-                                @item.Content
-                                @item.DateOfSend
-                            </div>
-                        </div>
+                    if (item.User == @Model.CurrentUser)
+                    {
+                        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                            <div class="card-header">@item.User</div>
+                            <div class="card-body">
+                                <h4 class="card-title">@item.Content</h4>
+                    <p class="card-text">@item.DateOfSend</p>
+                </div>
+            </div>
                     }
                     else
                     {
-                        <div class="panel panel-default">
-                            <div class="panel-heading">@item.User</div>
-                            <div class="panel-body">
-                                @item.Content
-                                @item.DateOfSend
+                        <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                            <div class="card-header">@item.User</div>
+                            <div class="card-body">
+                                <h4 class="card-title">@item.Content</h4>
+                                <p class="card-text"> @item.DateOfSend</p>
                             </div>
                         </div>
                     }
                 }
-            </p>
-        </div>
-        <div style="display:flex; position:fixed; margin-top:550px;">
-            <form action="/sendmessage" method="post">
-                <input type="text" name="Content" value=""><br />
-                <input type="hidden" name="user" value="@Model.CurrentUser"><br />
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
+                </p>
+                </div>
+                <div style="display:flex; position:fixed; margin-top:500px;width:100%">
+                    <form action="/sendmessage" method="post">
+                        <input style=" width:540px ; height:35px "type="text" name="Content" value="">  
+                        <input type="hidden" name="user" value="@Model.CurrentUser">
+                        <input type="submit" class="btn btn-success" value="Send">
+                    </form>
+                </div>
+                </div>
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+            </body>
+
+
+
 </html>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GroupChat.Services;
 using GroupChat.Models;
+using Microsoft.Web.WebSockets;
 
 namespace GroupChat.Controllers
 {
@@ -39,6 +40,7 @@ namespace GroupChat.Controllers
         [HttpGet("chatroom/{user}")]
         public IActionResult ChatRoom([FromRoute] string user)
         {
+            //HttpContext.Current.AcceptWebSocketRequest(new ChatWebSocketHandler(user));
             MessageService.MessageViewModel.CurrentUser = user;
             MessageService.MessageViewModel.MessageList = MessageService.ListOfMessages();
             return View(MessageService.MessageViewModel);
@@ -55,4 +57,26 @@ namespace GroupChat.Controllers
             return Redirect($"chatroom/{user}");
         }
     }
-}
+
+    class ChatWebSocketHandler : WebSocketHandler
+       {
+           private static WebSocketCollection chatClients = new WebSocketCollection();
+           private string username;
+    
+           public ChatWebSocketHandler(string user)
+           {
+               username = user;
+           }
+    
+           public override void OnOpen()
+           {
+               chatClients.Add(this);
+           }
+    
+           public override void OnMessage(string message)
+           {
+               chatClients.Broadcast(username + ": " + message);
+           }
+       }
+   }
+
