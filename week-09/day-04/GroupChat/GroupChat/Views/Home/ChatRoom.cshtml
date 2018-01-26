@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
+
+    <meta http-equiv="refresh" content="20">
     <title></title>
 </head>
 <body>
@@ -27,21 +28,21 @@
     <br />
     <br />
 
-    <div class="card border-primary mb-3" style=" display:flex; position:center; width:600px; height:500px;flex-direction:column-reverse" meta http-equiv="refresh" content="5">
+    <div class="card border-primary mb-3" style="  width:600px; height:700px;flex-direction:column-reverse;">
         <div class="card-header"></div>
-        <div class="card-body text-primary" style="overflow:scroll ;flex-direction:column-reverse">
+        <div class="card-body text-primary" style="overflow:scroll ;flex-direction:column-reverse ;overflow-x: hidden; ">
             <h4 class="card-title">GroupChat</h4>
             <p class="card-text">
                 @foreach (var item in @Model.MessageList)
                 {
                     if (item.User == @Model.CurrentUser)
                     {
-                        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                        <div class="card text-white bg-success mb-3" style="max-width: 20rem; ">
                             <div class="card-header">@item.User</div>
                             <div class="card-body">
                                 <h4 class="card-title">@item.Content</h4>
-                    <p class="card-text">@item.DateOfSend</p>
-                </div>
+                                <p class="card-text"> @item.DateOfSend</p>
+                            </div>
             </div>
                     }
                     else
@@ -55,22 +56,19 @@
                         </div>
                     }
                 }
+
                 </p>
                 </div>
-                <div style="display:flex; position:fixed; margin-top:500px;width:100%">
+                <div style="display:flex; position:fixed; margin-top:700px;width:100%">
                     <form action="/sendmessage" method="post">
-                        <input style=" width:540px ; height:35px "type="text" name="Content" value="">  
+                        <input style=" width:540px ; height:35px " type="text" name="Content" value="">
                         <input type="hidden" name="user" value="@Model.CurrentUser">
                         <input type="submit" class="btn btn-success" value="Send">
                     </form>
                 </div>
                 </div>
 
-
                 <script src="~/lib/jquery/dist/jquery.min.js"></script>
                 <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
             </body>
-
-
-
-</html>
+        </html>

@@ -4,13 +4,24 @@
     <title></title>
 </head>
 <body>
-    <form action="/userlog" method="post">
-        <br />
-        <div class="form-group">
-            <input type="text" name="user"><br>
+    <div style="padding-left:40%;padding-top:12%">
+        <div class="card text-white bg-success mb-3" style="max-width: 20rem; ">
+            <div class="card-header">Asbest Chat</div>
+            <div class="card-body">
+                <h4 class="card-title">LogIn</h4>
+                <form action="/userlog" method="post">
+                    <br />
+                    <div class="form-group">
+                        <input type="text" name="user"><br>
+                        <input type="password" name="password"><br>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>
+            </div>
         </div>
-        <input type="submit" value="Submit">
-    </form>
+    </div>
+
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

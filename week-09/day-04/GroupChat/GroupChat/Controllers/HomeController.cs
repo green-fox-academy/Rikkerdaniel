@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using GroupChat.Services;
 using GroupChat.Models;
 using Microsoft.Web.WebSockets;
+using System.Threading;
 
 namespace GroupChat.Controllers
 {
@@ -26,15 +27,15 @@ namespace GroupChat.Controllers
         }
 
         [HttpPost("userlog")]
-        public IActionResult UserLog(string user)
+        public IActionResult UserLog(string user, string password)
         {
-            if (user == null)
+            if (user != null && password == "barba")
             {
-                return RedirectToAction("LoginPage");
-            }
-            MessageService.MessageViewModel.CurrentUser = user;
+                MessageService.MessageViewModel.CurrentUser = user;
 
-            return Redirect($"chatroom/{user}");
+                return Redirect($"chatroom/{user}");
+            }
+            return RedirectToAction("LoginPage");
         }
 
         [HttpGet("chatroom/{user}")]
@@ -47,7 +48,7 @@ namespace GroupChat.Controllers
         }
 
         [HttpPost("sendmessage")]
-        public IActionResult SendMessage(string Content ,  string user)
+        public IActionResult SendMessage(string Content, string user)
         {
             if (Content == null)
             {
@@ -59,24 +60,24 @@ namespace GroupChat.Controllers
     }
 
     class ChatWebSocketHandler : WebSocketHandler
-       {
-           private static WebSocketCollection chatClients = new WebSocketCollection();
-           private string username;
-    
-           public ChatWebSocketHandler(string user)
-           {
-               username = user;
-           }
-    
-           public override void OnOpen()
-           {
-               chatClients.Add(this);
-           }
-    
-           public override void OnMessage(string message)
-           {
-               chatClients.Broadcast(username + ": " + message);
-           }
-       }
-   }
+    {
+        private static WebSocketCollection chatClients = new WebSocketCollection();
+        private string username;
+
+        public ChatWebSocketHandler(string user)
+        {
+            username = user;
+        }
+
+        public override void OnOpen()
+        {
+            chatClients.Add(this);
+        }
+
+        public override void OnMessage(string message)
+        {
+            chatClients.Broadcast(username + ": " + message);
+        }
+    }
+}
 
