@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RedditBackend.Services;
+using RedditBackend.Models;
 
 namespace RedditBackend.Controllers
 {
@@ -25,7 +26,7 @@ namespace RedditBackend.Controllers
         }
 
         [HttpPost("")]
-        public IActionResult Create([FromBody] Post post)
+        public IActionResult Create([FromBody] RedditPost post)
         {
             RedditService.CreatePost(post);
             return Json(RedditService.GetLastPost());
