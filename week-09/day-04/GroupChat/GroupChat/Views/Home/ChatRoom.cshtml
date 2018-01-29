@@ -3,7 +3,7 @@
 <head>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <meta http-equiv="refresh" content="20">
+  
     <title></title>
 </head>
 <body>
@@ -28,7 +28,7 @@
     <br />
     <br />
 
-    <div class="card border-primary mb-3" style="  width:600px; height:700px;flex-direction:column-reverse;">
+    <div class="card border-primary mb-3" style="  width:50%; height:65%;flex-direction:column-reverse;">
         <div class="card-header"></div>
         <div class="card-body text-primary" style="overflow:scroll ;flex-direction:column-reverse ;overflow-x: hidden; ">
             <h4 class="card-title">GroupChat</h4>
@@ -41,8 +41,8 @@
                             <div class="card-header">@item.User</div>
                             <div class="card-body">
                                 <h4 class="card-title">@item.Content</h4>
-                                <p class="card-text"> @item.DateOfSend</p>
-                            </div>
+                    <p class="card-text"> @item.DateOfSend</p>
+                </div>
             </div>
                     }
                     else
@@ -59,15 +59,13 @@
 
                 </p>
                 </div>
-                <div style="display:flex; position:fixed; margin-top:700px;width:100%">
-                    <form action="/sendmessage" method="post">
-                        <input style=" width:540px ; height:35px " type="text" name="Content" value="">
-                        <input type="hidden" name="user" value="@Model.CurrentUser">
-                        <input type="submit" class="btn btn-success" value="Send">
-                    </form>
-                </div>
-                </div>
 
+                </div>
+                <form action="/sendmessage" method="post">
+                    <input style=" width:46% ; height:4% " type="text" name="Content" value="">
+                    <input type="hidden" name="user" value="@Model.CurrentUser">
+                    <input type="submit" class="btn btn-success" value="Send">
+                </form>
                 <script src="~/lib/jquery/dist/jquery.min.js"></script>
                 <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
             </body>
