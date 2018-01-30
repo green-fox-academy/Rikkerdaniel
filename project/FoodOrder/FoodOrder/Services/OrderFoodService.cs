@@ -1,4 +1,5 @@
-﻿using FoodOrder.Repositories;
+﻿using FoodOrder.Models;
+using FoodOrder.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +41,9 @@ namespace FoodOrder.Services
             OrderFoodRepository.AddOrder(foodName, day, username);
         }
 
-        public void EditMenu()
+        public void EditMenu(List<MenuModel> newMenuList)
         {
-            OrderFoodRepository.EditMenu();
+            OrderFoodRepository.EditMenu(newMenuList);
         }
 
     }

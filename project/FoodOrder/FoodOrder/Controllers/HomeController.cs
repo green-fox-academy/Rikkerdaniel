@@ -42,26 +42,26 @@ namespace FoodOrder.Controllers
         }
 
         [HttpGet("menu/{username}")]
-        public IActionResult GetMenu()
+        public IActionResult GetMenu([FromRoute] string username)
         {
             return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
 
         [HttpGet("editmenu/{username}")]
-        public IActionResult EditMenu()
+        public IActionResult EditMenu([FromRoute] string username)
         {
             return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
 
         [HttpPost("newmenu/{username}")]
-        public IActionResult NewMenu()
+        public IActionResult NewMenu(List<MenuModel>newMenuList, [FromRoute] string username)
         {
-            OrderFoodService.EditMenu();
-            return Ok();
+            OrderFoodService.EditMenu(newMenuList);
+            return Redirect($"home/{username}");
         }
 
         [HttpGet("orders/{username}")]
-        public IActionResult ListAllOrders()
+        public IActionResult ListAllOrders([FromRoute] string username)
         {
             return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
