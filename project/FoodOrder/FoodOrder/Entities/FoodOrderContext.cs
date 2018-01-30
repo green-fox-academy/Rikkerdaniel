@@ -15,7 +15,7 @@ namespace FoodOrder.Entities
         }
 
         public DbSet<MenuModel> MenuModels { get; set; }
-        public DbSet<OrderedFoodModel> MOrderedFoodModels { get; set; }
+        public DbSet<OrderedFoodModel> OrderedFoodModels { get; set; }
         public DbSet<UserModel> UserModels { get; set; }
     }
 }
