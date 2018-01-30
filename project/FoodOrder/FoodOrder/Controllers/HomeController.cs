@@ -32,17 +32,29 @@ namespace FoodOrder.Controllers
         public IActionResult AddOrder(string  FoodName, string day, [FromRoute] string username)
         {
             OrderFoodService.AddOrder(FoodName, day, username);
+            return Redirect($"thankyou/{username}");
+        }
+
+        [HttpGet("thankyou/{username}")]
+        public IActionResult ThankYouUser([FromRoute] string username)
+        {
             return Ok();
         }
 
-        [HttpGet("menu")]
+        [HttpGet("menu/{username}")]
         public IActionResult GetMenu()
         {
             return Ok();
         }
 
-        [HttpGet("editmenu")]
-        public IActionResult editMenu()
+        [HttpGet("editmenu/{username}")]
+        public IActionResult EditMenu()
+        {
+            return Ok();
+        }
+
+        [HttpPost("editmenu/{username}")]
+        public IActionResult EditedMenu()
         {
             return Ok();
         }
