@@ -34,5 +34,24 @@ namespace FoodOrder.Controllers
             OrderFoodService.AddOrder(FoodName, day, username);
             return Ok();
         }
+
+        [HttpGet("menu")]
+        public IActionResult GetMenu()
+        {
+            return Ok();
+        }
+
+        [HttpGet("editmenu")]
+        public IActionResult editMenu()
+        {
+            return Ok();
+        }
+
+        [HttpGet("orders")]
+        public IActionResult ListAllOrders()
+        {
+            return Ok();
+        }
+
     }
 }
