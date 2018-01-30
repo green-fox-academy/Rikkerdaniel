@@ -9,8 +9,6 @@ using FoodOrder.Services;
 
 namespace FoodOrder.Controllers
 {
-   
-
     [Route("")]
     public class LoginController : Controller
     {

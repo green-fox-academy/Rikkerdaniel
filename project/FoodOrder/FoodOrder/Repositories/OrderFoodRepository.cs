@@ -27,5 +27,29 @@ namespace FoodOrder.Repositories
             FoodOrderContext.Add(newOrder);
             FoodOrderContext.SaveChanges();
         }
+
+        public List<MenuModel> ListOfMenu()
+        {
+            List<MenuModel> ListOfMenu = new List<MenuModel>();
+
+            foreach (var item in FoodOrderContext.MenuModels)
+            {
+                ListOfMenu.Add(item);
+            }
+
+            return ListOfMenu;
+        }
+
+        public List<OrderedFoodModel> ListOfOrders()
+        {
+            List<OrderedFoodModel> ListOfOrders = new List<OrderedFoodModel>();
+
+            foreach (var item in FoodOrderContext.OrderedFoodModels)
+            {
+                ListOfOrders.Add(item);
+            }
+
+            return ListOfOrders;
+        }
     }
 }
