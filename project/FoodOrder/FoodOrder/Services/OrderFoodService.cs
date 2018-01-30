@@ -24,5 +24,15 @@ namespace FoodOrder.Services
             }
             return false;
         }
+
+        internal bool CheckIfKitchenLady(string username)
+        {
+            var checkIfKitchenLady = OrderFoodRepository.FoodOrderContext.UserModels.Where(p => p.Username == username && p.IsKitchenLady);
+            if (checkIfKitchenLady.Count()>0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

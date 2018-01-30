@@ -32,7 +32,7 @@ namespace FoodOrder.Controllers
         {
             if (OrderFoodService.CheckLogin(username,password))
             {
-                return Ok();
+                return Redirect($"home/{username}");
             }
             return RedirectToAction("LoginPage"); 
         }
