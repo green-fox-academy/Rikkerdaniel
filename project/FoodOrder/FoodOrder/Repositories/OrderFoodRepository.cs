@@ -24,7 +24,7 @@ namespace FoodOrder.Repositories
                Day=day,
                User=username,
             };
-            FoodOrderContext.Add(newOrder);
+            FoodOrderContext.OrderedFoodModels.Add(newOrder);
             FoodOrderContext.SaveChanges();
         }
 
@@ -50,6 +50,28 @@ namespace FoodOrder.Repositories
             }
 
             return ListOfOrders;
+        }
+
+        public void EditMenu(List<MenuModel> NewMenuList)
+        {
+            ClearMenu();
+
+
+            foreach (var item in NewMenuList)
+            {
+            FoodOrderContext.MenuModels.Add(item);
+            FoodOrderContext.SaveChanges();
+            }
+        }
+
+        public void ClearMenu()
+        {
+            var RemoveList = FoodOrderContext.MenuModels.FirstOrDefault(t => t ==t);
+            if (RemoveList != null)
+            {
+                FoodOrderContext.MenuModels.Remove(RemoveList);
+            }
+            FoodOrderContext.SaveChanges();
         }
     }
 }

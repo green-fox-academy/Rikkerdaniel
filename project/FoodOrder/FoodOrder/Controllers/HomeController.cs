@@ -25,7 +25,7 @@ namespace FoodOrder.Controllers
             {
                 return View("kitchenLady");
             }
-            return View();
+            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
 
         [HttpPost("addorder/{username}")]
@@ -44,25 +44,26 @@ namespace FoodOrder.Controllers
         [HttpGet("menu/{username}")]
         public IActionResult GetMenu()
         {
-            return Ok();
+            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
 
         [HttpGet("editmenu/{username}")]
         public IActionResult EditMenu()
         {
-            return Ok();
+            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
 
-        [HttpPost("editmenu/{username}")]
-        public IActionResult EditedMenu()
+        [HttpPost("newmenu/{username}")]
+        public IActionResult NewMenu()
         {
+            OrderFoodService.EditMenu();
             return Ok();
         }
 
-        [HttpGet("orders")]
+        [HttpGet("orders/{username}")]
         public IActionResult ListAllOrders()
         {
-            return Ok();
+            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
 
     }

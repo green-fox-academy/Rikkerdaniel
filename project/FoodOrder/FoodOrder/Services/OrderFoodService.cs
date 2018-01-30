@@ -15,7 +15,7 @@ namespace FoodOrder.Services
 
         public OrderFoodRepository OrderFoodRepository { get; set; }
 
-        internal bool CheckLogin(string username, string password)
+        public bool CheckLogin(string username, string password)
         {
             var checkUser = OrderFoodRepository.FoodOrderContext.UserModels.Where(p => p.Username == username && p.Password == password);
             if (checkUser.Count()>0)
@@ -25,7 +25,7 @@ namespace FoodOrder.Services
             return false;
         }
 
-        internal bool CheckIfKitchenLady(string username)
+        public bool CheckIfKitchenLady(string username)
         {
             var checkIfKitchenLady = OrderFoodRepository.FoodOrderContext.UserModels.Where(p => p.Username == username && p.IsKitchenLady);
             if (checkIfKitchenLady.Count()>0)
@@ -35,9 +35,15 @@ namespace FoodOrder.Services
             return false;
         }
 
-        internal void AddOrder(string foodName, string day, string username)
+        public void AddOrder(string foodName, string day, string username)
         {
             OrderFoodRepository.AddOrder(foodName, day, username);
         }
+
+        public void EditMenu()
+        {
+            OrderFoodRepository.EditMenu();
+        }
+
     }
 }
