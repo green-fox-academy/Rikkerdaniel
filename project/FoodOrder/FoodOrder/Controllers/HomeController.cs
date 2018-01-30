@@ -23,7 +23,7 @@ namespace FoodOrder.Controllers
         {
             if (OrderFoodService.CheckIfKitchenLady(username))
             {
-                return View("kitchenLady");
+                return Redirect($"kitchen/{username}");
             }
             return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
         }
@@ -38,33 +38,7 @@ namespace FoodOrder.Controllers
         [HttpGet("thankyou/{username}")]
         public IActionResult ThankYouUser([FromRoute] string username)
         {
-            return Ok();
+            return View(username);
         }
-
-        [HttpGet("menu/{username}")]
-        public IActionResult GetMenu([FromRoute] string username)
-        {
-            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
-        }
-
-        [HttpGet("editmenu/{username}")]
-        public IActionResult EditMenu([FromRoute] string username)
-        {
-            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
-        }
-
-        [HttpPost("newmenu/{username}")]
-        public IActionResult NewMenu(List<MenuModel>newMenuList, [FromRoute] string username)
-        {
-            OrderFoodService.EditMenu(newMenuList);
-            return Redirect($"home/{username}");
-        }
-
-        [HttpGet("orders/{username}")]
-        public IActionResult ListAllOrders([FromRoute] string username)
-        {
-            return View(OrderFoodService.OrderFoodRepository.ListOfMenu());
-        }
-
     }
 }
