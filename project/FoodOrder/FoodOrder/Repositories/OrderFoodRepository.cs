@@ -55,7 +55,7 @@ namespace FoodOrder.Repositories
         public void EditMenu(List<MenuModel> NewMenuList)
         {
             ClearMenu();
-
+            ClearOrders();
 
             foreach (var item in NewMenuList)
             {
@@ -70,6 +70,16 @@ namespace FoodOrder.Repositories
             if (RemoveList != null)
             {
                 FoodOrderContext.MenuModels.Remove(RemoveList);
+            }
+            FoodOrderContext.SaveChanges();
+        }
+
+        public void ClearOrders()
+        {
+            var RemoveList = FoodOrderContext.OrderedFoodModels.FirstOrDefault(t => t == t);
+            if (RemoveList != null)
+            {
+                FoodOrderContext.OrderedFoodModels.Remove(RemoveList);
             }
             FoodOrderContext.SaveChanges();
         }

@@ -41,7 +41,7 @@ namespace FoodOrder.Controllers
         public IActionResult NewMenu(List<MenuModel> newMenuList, [FromRoute] string username)
         {
             OrderFoodService.EditMenu(newMenuList);
-            return Redirect($"home/{username}");
+            return Redirect($"kitchen/{username}");
         }
 
         [HttpGet("orders/{username}")]
