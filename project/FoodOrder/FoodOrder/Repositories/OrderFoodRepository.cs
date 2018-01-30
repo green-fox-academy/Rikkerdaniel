@@ -1,4 +1,5 @@
 ﻿using FoodOrder.Entities;
+using FoodOrder.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,16 @@ namespace FoodOrder.Repositories
 
         public FoodOrderContext FoodOrderContext { get; set; }
 
+        internal void AddOrder(string foodName, string day, string username)
+        {
+            OrderedFoodModel newOrder= new OrderedFoodModel()
+            {
+               FoodName=foodName,
+               Day=day,
+               User=username,
+            };
+            FoodOrderContext.Add(newOrder);
+            FoodOrderContext.SaveChanges();
+        }
     }
 }

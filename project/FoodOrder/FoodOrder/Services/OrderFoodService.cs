@@ -34,5 +34,10 @@ namespace FoodOrder.Services
             }
             return false;
         }
+
+        internal void AddOrder(string foodName, string day, string username)
+        {
+            OrderFoodRepository.AddOrder(foodName, day, username);
+        }
     }
 }
